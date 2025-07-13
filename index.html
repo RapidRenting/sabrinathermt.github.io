@@ -1,48 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sabrina TherMT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabrina McMorran | Registered Massage Therapist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    header {
+      background: #1a1a1a;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+    .photo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .photo img {
+      max-width: 180px;
+      border-radius: 50%;
+      border: 3px solid #1a1a1a;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Sabrina TherMT</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Sabrina McMorran</h1>
+    <p>Registered Massage Therapist · Sports Recovery · Mobility Expert</p>
   </header>
+
   <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>Welcome to Sabrina TherMT! I am a registered massage therapist dedicated to helping you achieve wellness and relaxation.</p>
+    <section class="photo">
+      <img src="/images/ryan_fleming_headshot.jpg" alt="Ryan Fleming Headshot" width="200" />
     </section>
-    <section id="services">
-      <h2>Services</h2>
+
+  <a href="/about-me" style="text-decoration: none; color: inherit;">  
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm a Registered Massage Therapist (RMT) working in the Ottawa/Gatineau Area. I have had 5 years of experience treating sports related injuries, assesing mobility, and ensuring a quick and painless recovery. So that you can get back to what you love doing the most.
+      </p>
+    </section>
+  </a>
+    
+  <a href="/resume" style="text-decoration: none; color: inherit;">
+    <section>
+      <h2>Résumé</h2>
+      <p>
+        View my full résumé <a href="files/ryan_fleming_resume.pdf" target="_blank">here</a>. Highlights include:
+      </p>
       <ul>
-        <li>Swedish Massage</li>
-        <li>Deep Tissue Massage</li>
-        <li>Sports Massage</li>
-        <li>Therapeutic Massage</li>
+        <li>Extensive experience in Sports related injuries and treatment/li>
+        <li>Skilled in massage techniques that aim to relieve mussle pain both inside and outside of the treatment room</li>
+        <li>Collaborated with various physical thaerpy clinicts and clinitans in the Ottawa/Gatineau area </li>
       </ul>
     </section>
-    <section id="contact">
+  </a>
+    
+  <a href="/projects" style="text-decoration: none; color: inherit;">
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Sports Related Injuiry Treatment</strong> – Usuing a combination of deep tissue massage techniques</li>
+        <li><strong>Realaisitc and Effectitive Stregnthening and Streching Regiments</strong> – Personalized to your specific needs while considering lifestyle and other factors</li>
+        <li><strong>Personable and Safe Environment</strong> – See a RMT who understands the personal nature of treating sports related injuries, and has the skills to make the experience as comfortable as possible for both new and returning clients</li>
+      </ul>
+    </section>
+  </a>
+
+  <a href="/contact" style="text-decoration: none; color: inherit;">
+    <section>
       <h2>Contact</h2>
-      <form>
-        <label for="name">Name:</label><input type="text" id="name" name="name" required>
-        <label for="email">Email:</label><input type="email" id="email" name="email" required>
-        <label for="message">Message:</label><textarea id="message" name="message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <p>
+        Email: <a href="mailto:sabrina@sabrinathermt.com">sabrina@sabrinathermt.com</a><br/>
+        GitHub: <a href="https://github.com/404" target="_blank">404 Not Found</a>
+      </p>
     </section>
   </main>
+</a>
+
   <footer>
-    <p>&copy; 2025 Sabrina TherMT. All rights reserved.</p>
+    &copy; 2025 Ryan Fleming · Made with Quarto &amp; HTML
   </footer>
 </body>
 </html>
