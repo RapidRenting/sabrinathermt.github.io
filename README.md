@@ -20,6 +20,14 @@ npm run build
 npm run worker:dry-run
 ```
 
+After the production domain is connected, run the end-to-end launch verification with:
+
+```sh
+npm run verify:production
+```
+
+This checks the required GitHub Pages DNS records, preserved Google Workspace mail records, the retained GitHub verification challenge, HTTPS and `www` redirects, every bilingual canonical/alternate pair, robots and sitemaps, and all Jane booking destinations.
+
 ## FAQ editing
 
 The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `/admin/` uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.

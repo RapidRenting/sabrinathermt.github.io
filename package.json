@@ -13,6 +13,7 @@
     "check": "astro check && node scripts/validate-content.mjs",
     "test": "vitest run",
     "format:check": "prettier --check .",
+    "verify:production": "node scripts/verify-production.mjs",
     "worker:types": "wrangler types --config worker/wrangler.jsonc worker/worker-configuration.d.ts",
     "worker:dry-run": "wrangler deploy --dry-run --env production --config worker/wrangler.jsonc"
   },
