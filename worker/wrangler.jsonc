@@ -1,0 +1,31 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "sabrina-rmt-cms-auth-dev",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-11",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "vars": {
+    "SITE_ORIGIN": "http://localhost:4321",
+    "ALLOWED_GITHUB_USERS": "rapidrenting",
+  },
+  "env": {
+    "production": {
+      "name": "sabrina-rmt-cms-auth",
+      "workers_dev": false,
+      "routes": [
+        {
+          "pattern": "cms-auth.sabrinathermt.com",
+          "custom_domain": true,
+        },
+      ],
+      "vars": {
+        "SITE_ORIGIN": "https://sabrinathermt.com",
+        "ALLOWED_GITHUB_USERS": "rapidrenting",
+      },
+    },
+  },
+}

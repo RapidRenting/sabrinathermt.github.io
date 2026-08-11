@@ -1,0 +1,70 @@
+{
+  "faqs": [
+    {
+      "id": "first-appointment",
+      "en": {
+        "question": "What should I book for my first appointment?",
+        "answer": "Please choose an initial appointment when booking your first visit with Sabrina. Jane lists the current appointment options and availability."
+      },
+      "fr": {
+        "question": "Que dois-je réserver pour mon premier rendez-vous?",
+        "answer": "Pour votre première visite avec Sabrina, veuillez choisir un rendez-vous initial. Jane présente les options de rendez-vous et les disponibilités à jour."
+      }
+    },
+    {
+      "id": "what-to-expect",
+      "en": {
+        "question": "What happens during an initial appointment?",
+        "answer": "Your initial appointment includes a review of your health history, a focused assessment, collaborative treatment planning, informed consent and hands-on treatment. These steps all take place within the time you booked."
+      },
+      "fr": {
+        "question": "Que comprend un premier rendez-vous?",
+        "answer": "Votre premier rendez-vous comprend l’examen de vos antécédents de santé, une évaluation ciblée, une planification collaborative du traitement, le consentement éclairé et le traitement manuel. Toutes ces étapes ont lieu pendant la durée réservée."
+      }
+    },
+    {
+      "id": "hours",
+      "en": {
+        "question": "When can I book with Sabrina?",
+        "answer": "Sabrina is at Gladstone on Mondays and Wednesdays from 8 a.m. to 4 p.m., with Sundays by request. She is at Fourth on Tuesdays from 8 a.m. to 4 p.m. and Thursdays from noon to 8 p.m., with Fridays by request. Jane is the source of truth for live availability."
+      },
+      "fr": {
+        "question": "Quand puis-je prendre rendez-vous avec Sabrina?",
+        "answer": "Sabrina est à Gladstone les lundis et mercredis de 8 h à 16 h, et le dimanche sur demande. Elle est à Fourth les mardis de 8 h à 16 h et les jeudis de midi à 20 h, et le vendredi sur demande. Jane demeure la source officielle pour les disponibilités en temps réel."
+      }
+    },
+    {
+      "id": "locations-parking",
+      "en": {
+        "question": "Where are the locations, and what is the parking situation?",
+        "answer": "Gladstone is at Unit 1, 481 Gladstone Avenue, with free two-hour street parking on Gladstone and nearby side streets. Fourth is at The Movement Co., 101 Fourth Avenue, 2nd Floor; parking in this area can be limited, so allow extra time. Both locations have a waiting area."
+      },
+      "fr": {
+        "question": "Où sont les cliniques et quelles sont les options de stationnement?",
+        "answer": "Gladstone se trouve à l’unité 1 du 481, avenue Gladstone. Le stationnement sur rue y est gratuit pendant deux heures sur l’avenue Gladstone et les rues avoisinantes. Fourth se trouve à The Movement Co., au 101, avenue Fourth, 2e étage; le stationnement dans ce secteur peut être limité, alors prévoyez plus de temps. Les deux lieux disposent d’une aire d’attente."
+      }
+    },
+    {
+      "id": "booking",
+      "en": {
+        "question": "How do I book or change an appointment?",
+        "answer": "Use Sabrina’s secure Jane booking site to view current appointment options, book, or manage an existing appointment. Fees, policies and live availability are maintained in Jane."
+      },
+      "fr": {
+        "question": "Comment puis-je prendre ou modifier un rendez-vous?",
+        "answer": "Utilisez le site de réservation sécurisé Jane de Sabrina pour consulter les options à jour, prendre rendez-vous ou gérer un rendez-vous existant. Les tarifs, les politiques et les disponibilités en temps réel sont tenus à jour dans Jane."
+      }
+    },
+    {
+      "id": "contact",
+      "en": {
+        "question": "How can I contact Sabrina?",
+        "answer": "For a general question or a by-request appointment, email sabrinathermt@gmail.com. Please do not include personal health information in email. Booking and health-history information should be entered only through Jane."
+      },
+      "fr": {
+        "question": "Comment puis-je communiquer avec Sabrina?",
+        "answer": "Pour une question générale ou un rendez-vous sur demande, écrivez à sabrinathermt@gmail.com. N’incluez aucun renseignement personnel sur la santé dans votre courriel. Les renseignements de réservation et les antécédents de santé doivent être saisis uniquement dans Jane."
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCta from '../components/BookingCta.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { locations, site } from '../data/site';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.origin}/#sabrina-mcmorran`,
+      name: 'Sabrina McMorran',
+      jobTitle: 'Registered Massage Therapist',
+      url: site.origin,
+      email: site.email,
+      knowsLanguage: ['en', 'fr'],
+      worksFor: { '@id': `${site.origin}/#business` },
+    },
+    {
+      '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
+      '@id': `${site.origin}/#business`,
+      name: 'Sabrina The RMT',
+      url: site.origin,
+      email: site.email,
+      employee: { '@id': `${site.origin}/#sabrina-mcmorran` },
+      location: locations.map((location) => ({
+        '@type': 'Place',
+        name: `${location.name.en} location`,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: location.address.split(', Ottawa')[0],
+          addressLocality: 'Ottawa',
+          addressRegion: 'ON',
+          postalCode: location.address.slice(-7),
+          addressCountry: 'CA',
+        },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout
+  locale="en"
+  title="Sabrina The RMT"
+  description="Book individualized massage therapy with Sabrina McMorran, Registered Massage Therapist, at two Ottawa locations."
+  path="/"
+  structuredData={structuredData}
+>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Ottawa massage therapy</p>
+        <h1>Sabrina McMorran</h1>
+        <p class="hero-title">Registered Massage Therapist</p>
+        <p class="hero-lede">
+          Individualized care designed around how you move, work and live—at two welcoming Ottawa
+          locations.
+        </p>
+        <div class="hero-actions">
+          <BookingCta locale="en" />
+          <a class="button button-secondary" href="#locations">Choose a location</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img
+          src="/assets/03-line-symbol-background.jpg"
+          width="1200"
+          height="1200"
+          alt="Sabrina The RMT line symbol"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="locations">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Book in Ottawa</p>
+          <h2>Choose your location</h2>
+        </div>
+        <p>
+          Select the clinic that works best for you. Jane shows current availability, appointment
+          options, fees and policies.
+        </p>
+      </div>
+      <div class="location-grid">
+        {locations.map((location) => <LocationCard locale="en" location={location} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div class="split-art">
+        <img src="/assets/sabrinathermt-mark-cream.png" width="800" height="800" alt="" />
+      </div>
+      <div class="split-copy">
+        <p class="eyebrow">A thoughtful approach</p>
+        <h2>Meet Sabrina</h2>
+        <p>
+          Sabrina’s background as a competitive dancer inspired her interest in movement and body
+          awareness. Her treatments are individualized and may blend Swedish massage, myofascial
+          work, trigger-point techniques, joint mobilizations and stretching.
+        </p>
+        <a class="text-link" href="/meet-sabrina/"
+          >Learn more about Sabrina <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="shell cta-grid">
+      <div>
+        <h2>Ready to book?</h2>
+        <p>Use Jane to view current appointments at Gladstone and Fourth.</p>
+      </div>
+      <BookingCta locale="en" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { routePairs, site, type Locale } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  structuredData?: Record<string, unknown>;
+}
+
+const {
+  locale,
+  title,
+  description,
+  path,
+  image = '/assets/sabrinathermt-logo-mulberry.png',
+  structuredData,
+} = Astro.props;
+const canonical = new URL(path, site.origin).href;
+const alternatePath = routePairs[path];
+if (!alternatePath) throw new Error(`Missing language equivalent for ${path}`);
+const alternate = new URL(alternatePath, site.origin).href;
+const englishPath = locale === 'en' ? path : alternatePath;
+const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
+---
+
+<!doctype html>
+<html lang={locale === 'en' ? 'en-CA' : 'fr-CA'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5b3a5d" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'fr-CA' : 'en-CA'} href={alternate} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'en-CA' : 'fr-CA'} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={new URL(englishPath, site.origin).href} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={locale === 'en' ? 'en_CA' : 'fr_CA'} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, site.origin).href} />
+    <meta property="og:image:alt" content="Sabrina The RMT" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {
+      structuredData && (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+      )
+    }
+  </head>
+  <body>
+    <Header locale={locale} currentPath={path} alternatePath={alternatePath} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

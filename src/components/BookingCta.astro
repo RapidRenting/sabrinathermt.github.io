@@ -1,0 +1,21 @@
+---
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  variant?: 'primary' | 'secondary';
+  label?: string;
+  href?: string;
+}
+
+const { locale, variant = 'primary', label, href = site.booking.main } = Astro.props;
+const text = label ?? (locale === 'en' ? 'Book online' : 'Prendre rendez-vous');
+---
+
+<a
+  class:list={['button', variant === 'secondary' && 'button-secondary']}
+  href={href}
+  rel="external"
+>
+  {text}<span aria-hidden="true"> ↗</span>
+</a>

@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout
+  locale="en"
+  title="Privacy"
+  description="How Sabrina The RMT handles website privacy, email, Jane booking links and optional Google Maps."
+  path="/privacy/"
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <p class="eyebrow">Privacy notice</p>
+      <h1>A simple, privacy-conscious website</h1>
+      <p class="page-lede">
+        This website is designed to collect as little information as possible.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose">
+      <h2>Information collected on this website</h2>
+      <p>
+        This website does not include a contact form, online intake form, newsletter, advertising
+        pixels or analytics. It does not ask you to submit personal health information. As with most
+        websites, the hosting and network providers may process basic technical logs needed to
+        deliver and protect the site, such as an IP address, request time, page requested and
+        browser information.
+      </p>
+
+      <h2>Booking through Jane</h2>
+      <p>
+        Booking buttons take you to Sabrina’s Jane booking site. Jane is a separate service with its
+        own privacy practices. Appointment and health-history information should be entered only
+        through Jane, not through this website or ordinary email.
+      </p>
+
+      <h2>Email</h2>
+      <p>
+        You may email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions or a by-request
+        appointment. Email is not intended for personal health information, so please do not include health
+        details in your message.
+      </p>
+
+      <h2>Google Maps</h2>
+      <p>
+        The location maps are not loaded automatically. If you choose “Show map,” your browser
+        connects to Google and Google may receive technical information about your visit. You can
+        use the written addresses without loading a map.
+      </p>
+
+      <h2>Questions and accessible information</h2>
+      <p>
+        For a privacy question or to request this information in an accessible format, email <a
+          href={`mailto:${site.email}`}>{site.email}</a
+        > without including personal health information.
+      </p>
+      <p><em>Last updated: August 11, 2026.</em></p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCta from '../../components/BookingCta.astro';
+import faqData from '../../data/faqs.json';
+---
+
+<BaseLayout
+  locale="en"
+  title="Frequently Asked Questions"
+  description="Answers about booking, first appointments, Ottawa locations, hours, parking and contacting Sabrina The RMT."
+  path="/faq/"
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <BookingCta locale="en" />
+      <p class="eyebrow">Helpful details</p>
+      <h1>Frequently asked questions</h1>
+      <p class="page-lede">
+        A few practical details to help you feel prepared before your appointment.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow faq-list">
+      {
+        faqData.faqs.map((faq) => (
+          <details>
+            <>
+              <summary>{faq.en.question}</summary>
+              <p>{faq.en.answer}</p>
+            </>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCta from '../../components/BookingCta.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout
+  locale="en"
+  title="Meet Sabrina"
+  description="Learn about Sabrina McMorran, RMT, her movement background and her individualized approach to massage therapy in Ottawa."
+  path="/meet-sabrina/"
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <BookingCta locale="en" />
+      <p class="eyebrow">Meet your RMT</p>
+      <h1>Care shaped around you</h1>
+      <p class="page-lede">
+        Sabrina McMorran is a Registered Massage Therapist who brings curiosity, clear communication
+        and an individualized approach to every appointment.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose">
+      <h2>About Sabrina</h2>
+      <p>
+        Whether your week is spent at a desk, staying active or balancing both, Sabrina understands
+        the importance of feeling comfortable and capable in your body. Her background as a
+        competitive dancer inspired her interest in movement and body awareness.
+      </p>
+      <p>
+        Sabrina provides individualized treatments using a blend of Swedish massage, myofascial
+        work, trigger-point techniques, joint mobilizations and stretching. Her goal is to help you
+        understand your tension patterns, move more comfortably and continue doing the activities
+        you enjoy. Remedial exercises may also be provided when helpful.
+      </p>
+
+      <h2>Professional registration</h2>
+      <p>
+        Sabrina is registered with the College of Massage Therapists of Ontario and is currently
+        authorized to practise. You can confirm her registration directly in the College’s public
+        register.
+      </p>
+      <p>
+        <a class="text-link" href={site.registerUrl} rel="external"
+          >Verify Sabrina’s registration in the CMTO Public Register <span aria-hidden="true"
+            >↗</span
+          ></a
+        >
+      </p>
+
+      <div class="callout">
+        <strong>Questions before booking?</strong>
+        Email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions. Please do not include
+        personal health information in email.
+      </div>
+
+      <div class="cta-actions">
+        <BookingCta locale="en" />
+        <a class="button button-secondary" href="/faq/">Read frequently asked questions</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
