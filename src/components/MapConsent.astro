@@ -1,0 +1,51 @@
+---
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  mapUrl: string;
+  locationName: string;
+}
+
+const { locale, mapUrl, locationName } = Astro.props;
+const buttonLabel =
+  locale === 'en' ? `Show map for ${locationName}` : `Afficher la carte de ${locationName}`;
+const privacyText =
+  locale === 'en'
+    ? 'The map is provided by Google and loads only after you choose to show it.'
+    : 'La carte est fournie par Google et se charge uniquement lorsque vous choisissez de l’afficher.';
+---
+
+<div class="map-consent" data-map-consent data-map-url={mapUrl}>
+  <div class="map-placeholder">
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="42" height="42">
+      <path
+        d="M12 22s7-6.4 7-13A7 7 0 1 0 5 9c0 6.6 7 13 7 13Zm0-9.5A3.5 3.5 0 1 1 12 5a3.5 3.5 0 0 1 0 7.5Z"
+        fill="currentColor"></path>
+    </svg>
+    <button class="button button-secondary map-button" type="button">{buttonLabel}</button>
+    <p>{privacyText}</p>
+  </div>
+</div>
+
+<script>
+  function initializeMaps() {
+    document.querySelectorAll<HTMLElement>('[data-map-consent]').forEach((container) => {
+      const button = container.querySelector<HTMLButtonElement>('.map-button');
+      if (!button || button.dataset.ready === 'true') return;
+      button.dataset.ready = 'true';
+      button.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = container.dataset.mapUrl ?? '';
+        iframe.title = button.textContent?.trim() ?? 'Google map';
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.allowFullscreen = true;
+        container.replaceChildren(iframe);
+      });
+    });
+  }
+
+  initializeMaps();
+  document.addEventListener('astro:page-load', initializeMaps);
+</script>

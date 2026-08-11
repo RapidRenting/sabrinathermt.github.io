@@ -1,0 +1,7 @@
+dist/
+node_modules/
+.playwright-cli/
+output/
+public/admin/decap-cms.js
+public/assets/
+worker/worker-configuration.d.ts

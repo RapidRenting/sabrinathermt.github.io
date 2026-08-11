@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { site } from '../../../data/site';
+---
+
+<BaseLayout
+  locale="fr"
+  title="Confidentialité"
+  description="Comment Sabrina The RMT traite la confidentialité du site, les courriels, les liens de réservation Jane et les cartes Google facultatives."
+  path="/fr/confidentialite/"
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <p class="eyebrow">Avis de confidentialité</p>
+      <h1>Un site simple et respectueux de la vie privée</h1>
+      <p class="page-lede">
+        Ce site est conçu pour recueillir le moins de renseignements possible.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose">
+      <h2>Renseignements recueillis sur ce site</h2>
+      <p>
+        Ce site ne contient aucun formulaire de contact ou d’admission, aucune infolettre, aucun
+        pixel publicitaire et aucun outil d’analyse. Il ne vous demande pas de transmettre de
+        renseignements personnels sur la santé. Comme pour la plupart des sites, les fournisseurs
+        d’hébergement et de réseau peuvent traiter des journaux techniques de base nécessaires à la
+        diffusion et à la protection du site, notamment l’adresse IP, l’heure de la demande, la page
+        demandée et des renseignements sur le navigateur.
+      </p>
+
+      <h2>Réservation avec Jane</h2>
+      <p>
+        Les boutons de réservation vous dirigent vers le site Jane de Sabrina. Jane est un service
+        distinct qui applique ses propres pratiques de confidentialité. Les renseignements liés aux
+        rendez-vous et aux antécédents de santé doivent être saisis uniquement dans Jane, et non sur
+        ce site ou dans un courriel ordinaire.
+      </p>
+
+      <h2>Courriel</h2>
+      <p>
+        Vous pouvez écrire à <a href={`mailto:${site.email}`}>{site.email}</a> pour une question générale
+        ou un rendez-vous sur demande. Le courriel n’est pas destiné aux renseignements personnels sur
+        la santé; n’incluez donc aucun détail sur votre santé dans votre message.
+      </p>
+
+      <h2>Google Maps</h2>
+      <p>
+        Les cartes ne se chargent pas automatiquement. Si vous choisissez « Afficher la carte »,
+        votre navigateur se connecte à Google, qui peut recevoir des renseignements techniques sur
+        votre visite. Vous pouvez utiliser les adresses écrites sans charger de carte.
+      </p>
+
+      <h2>Questions et formats accessibles</h2>
+      <p>
+        Pour une question sur la confidentialité ou pour demander ces renseignements dans un format
+        accessible, écrivez à <a href={`mailto:${site.email}`}>{site.email}</a> sans inclure de renseignements
+        personnels sur la santé.
+      </p>
+      <p><em>Dernière mise à jour : 11 août 2026.</em></p>
+    </div>
+  </section>
+</BaseLayout>

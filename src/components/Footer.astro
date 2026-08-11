@@ -1,0 +1,68 @@
+---
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <img
+        class="footer-mark"
+        src="/assets/sabrinathermt-mark-cream.png"
+        width="180"
+        height="180"
+        alt=""
+      />
+      <p class="footer-name">Sabrina McMorran, RMT <span lang="fr">/ MTI</span></p>
+      <p>
+        {
+          locale === 'en'
+            ? 'Individualized massage therapy in Ottawa.'
+            : 'Massothérapie individualisée à Ottawa.'
+        }
+      </p>
+    </div>
+    <div>
+      <h2>{locale === 'en' ? 'Contact' : 'Coordonnées'}</h2>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p class="small">
+        {
+          locale === 'en'
+            ? 'Please do not send personal health information by email.'
+            : 'N’envoyez aucun renseignement personnel sur la santé par courriel.'
+        }
+      </p>
+    </div>
+    <div>
+      <h2>{locale === 'en' ? 'Information' : 'Renseignements'}</h2>
+      <ul class="footer-links">
+        <li>
+          <a href={locale === 'en' ? '/privacy/' : '/fr/confidentialite/'}
+            >{locale === 'en' ? 'Privacy' : 'Confidentialité'}</a
+          >
+        </li>
+        <li>
+          <a href={site.registerUrl} rel="external"
+            >{locale === 'en' ? 'CMTO Public Register' : 'Registre public de l’OMCM'}</a
+          >
+        </li>
+        <li><a href="/admin/">{locale === 'en' ? 'FAQ editor' : 'Éditeur de FAQ'}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© {new Date().getFullYear()} Sabrina The RMT</p>
+    <p>
+      {
+        locale === 'en'
+          ? 'Accessible information is available on request.'
+          : 'Les renseignements sont offerts dans un format accessible sur demande.'
+      }
+    </p>
+  </div>
+</footer>

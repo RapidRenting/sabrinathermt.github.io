@@ -1,0 +1,51 @@
+---
+import BookingCta from './BookingCta.astro';
+import MapConsent from './MapConsent.astro';
+import type { Locale, locations } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  location: (typeof locations)[number];
+}
+
+const { locale, location } = Astro.props;
+const address = locale === 'en' ? location.address : location.addressFr;
+---
+
+<article class="location-card" id={location.id}>
+  <div class="location-copy">
+    <p class="eyebrow">{locale === 'en' ? 'Ottawa location' : 'Lieu à Ottawa'}</p>
+    <h3>{location.name[locale]}</h3>
+    {'venue' in location && <p class="venue">{location.venue}</p>}
+    <address>{address}</address>
+    <h4>{locale === 'en' ? 'Bookable hours' : 'Heures de rendez-vous'}</h4>
+    <dl class="hours">
+      {
+        location.hours[locale].map(([day, time]) => (
+          <>
+            <>
+              <dt>{day}</dt>
+              <dd>{time}</dd>
+            </>
+          </>
+        ))
+      }
+    </dl>
+    <p class="location-note">{location.notes[locale]}</p>
+    <div class="location-actions">
+      <BookingCta
+        locale={locale}
+        href={location.bookingUrl}
+        label={locale === 'en' ? `Book ${location.name.en}` : `Réserver à ${location.name.fr}`}
+      />
+      <a
+        class="text-link"
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`}
+        rel="external"
+      >
+        {locale === 'en' ? 'Get directions' : 'Itinéraire'}<span aria-hidden="true"> ↗</span>
+      </a>
+    </div>
+  </div>
+  <MapConsent locale={locale} mapUrl={location.mapUrl} locationName={location.name[locale]} />
+</article>

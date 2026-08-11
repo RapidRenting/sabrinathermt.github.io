@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCta from '../../components/BookingCta.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import { locations } from '../../data/site';
+---
+
+<BaseLayout
+  locale="fr"
+  title="Sabrina The RMT"
+  description="Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, massothérapeute inscrite, à deux adresses à Ottawa."
+  path="/fr/"
+>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Massothérapie à Ottawa</p>
+        <h1>Sabrina McMorran</h1>
+        <p class="hero-title">Massothérapeute inscrite (MTI)</p>
+        <p class="hero-lede">
+          Des soins individualisés qui tiennent compte de votre façon de bouger, de travailler et de
+          vivre—à deux endroits accueillants à Ottawa.
+        </p>
+        <div class="hero-actions">
+          <BookingCta locale="fr" />
+          <a class="button button-secondary" href="#locations">Choisir un lieu</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img
+          src="/assets/03-line-symbol-background.jpg"
+          width="1200"
+          height="1200"
+          alt="Symbole linéaire de Sabrina The RMT"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="locations">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Prendre rendez-vous à Ottawa</p>
+          <h2>Choisissez votre lieu</h2>
+        </div>
+        <p>
+          Sélectionnez la clinique qui vous convient. Jane présente les disponibilités, les options
+          de rendez-vous, les tarifs et les politiques à jour.
+        </p>
+      </div>
+      <div class="location-grid">
+        {locations.map((location) => <LocationCard locale="fr" location={location} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <div class="split-art">
+        <img src="/assets/sabrinathermt-mark-cream.png" width="800" height="800" alt="" />
+      </div>
+      <div class="split-copy">
+        <p class="eyebrow">Une approche réfléchie</p>
+        <h2>Rencontrez Sabrina</h2>
+        <p>
+          Le parcours de Sabrina en danse de compétition a éveillé son intérêt pour le mouvement et
+          la conscience corporelle. Ses traitements sont individualisés et peuvent combiner le
+          massage suédois, le travail myofascial, les techniques de points gâchettes, les
+          mobilisations articulaires et les étirements.
+        </p>
+        <a class="text-link" href="/fr/rencontrez-sabrina/"
+          >En savoir plus sur Sabrina <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="shell cta-grid">
+      <div>
+        <h2>Prête ou prêt à réserver?</h2>
+        <p>Consultez Jane pour voir les rendez-vous à jour à Gladstone et à Fourth.</p>
+      </div>
+      <BookingCta locale="fr" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCta from '../../../components/BookingCta.astro';
+import { site } from '../../../data/site';
+---
+
+<BaseLayout
+  locale="fr"
+  title="Rencontrez Sabrina"
+  description="Découvrez Sabrina McMorran, MTI, son parcours en mouvement et son approche individualisée de la massothérapie à Ottawa."
+  path="/fr/rencontrez-sabrina/"
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <BookingCta locale="fr" />
+      <p class="eyebrow">Rencontrez votre MTI</p>
+      <h1>Des soins adaptés à votre réalité</h1>
+      <p class="page-lede">
+        Sabrina McMorran est massothérapeute inscrite. Elle apporte curiosité, communication claire
+        et approche individualisée à chaque rendez-vous.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose">
+      <h2>À propos de Sabrina</h2>
+      <p>
+        Que votre semaine se passe au bureau, en mouvement ou entre les deux, Sabrina comprend
+        combien il est important de se sentir à l’aise et en confiance dans son corps. Son parcours
+        en danse de compétition a éveillé son intérêt pour le mouvement et la conscience corporelle.
+      </p>
+      <p>
+        Sabrina propose des traitements individualisés qui combinent le massage suédois, le travail
+        myofascial, les techniques de points gâchettes, les mobilisations articulaires et les
+        étirements. Son objectif est de vous aider à mieux comprendre vos habitudes de tension, à
+        bouger plus confortablement et à continuer les activités que vous aimez. Des exercices
+        thérapeutiques peuvent aussi être proposés lorsque cela est utile.
+      </p>
+
+      <h2>Inscription professionnelle</h2>
+      <p>
+        Sabrina est inscrite auprès de l’Ordre des massothérapeutes de l’Ontario et est actuellement
+        autorisée à exercer. Vous pouvez confirmer son inscription directement dans le registre
+        public de l’Ordre.
+      </p>
+      <p>
+        <a class="text-link" href={site.registerUrl} rel="external"
+          >Vérifier l’inscription de Sabrina au registre public de l’OMCM <span aria-hidden="true"
+            >↗</span
+          ></a
+        >
+      </p>
+
+      <div class="callout">
+        <strong>Des questions avant de réserver?</strong>
+        Écrivez à <a href={`mailto:${site.email}`}>{site.email}</a> pour toute question générale. N’incluez
+        aucun renseignement personnel sur la santé dans votre courriel.
+      </div>
+
+      <div class="cta-actions">
+        <BookingCta locale="fr" />
+        <a class="button button-secondary" href="/fr/faq/">Lire la foire aux questions</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

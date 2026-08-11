@@ -1,0 +1,53 @@
+backend:
+  name: github
+  repo: RapidRenting/sabrinathermt.github.io
+  branch: main
+  base_url: https://cms-auth.sabrinathermt.com
+  auth_endpoint: auth
+  open_authoring: true
+
+publish_mode: editorial_workflow
+site_url: https://sabrinathermt.com
+display_url: https://sabrinathermt.com
+logo_url: https://sabrinathermt.com/assets/sabrinathermt-logo-cream.svg
+locale: en
+
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: faq_content
+    label: Frequently Asked Questions
+    description: Every FAQ must be complete in both English and French. Saving creates a review branch; publishing requires an approved pull request.
+    files:
+      - name: faqs
+        label: Bilingual FAQs
+        file: src/data/faqs.json
+        fields:
+          - name: faqs
+            label: FAQ entries
+            widget: list
+            summary: '{{fields.id}} — {{fields.en.question}}'
+            minimize_collapsed: true
+            fields:
+              - name: id
+                label: Stable ID
+                widget: string
+                hint: Lowercase letters, numbers and hyphens only. Do not change an existing ID.
+                pattern:
+                  - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+                  - Use lowercase letters, numbers and hyphens only.
+              - name: en
+                label: English
+                widget: object
+                collapsed: false
+                fields:
+                  - { name: question, label: Question, widget: string }
+                  - { name: answer, label: Answer, widget: text }
+              - name: fr
+                label: Français
+                widget: object
+                collapsed: false
+                fields:
+                  - { name: question, label: Question, widget: string }
+                  - { name: answer, label: Réponse, widget: text }
