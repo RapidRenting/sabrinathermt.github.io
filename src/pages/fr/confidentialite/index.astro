@@ -39,11 +39,13 @@ import { site } from '../../../data/site';
         ce site ou dans un courriel ordinaire.
       </p>
 
-      <h2>Courriel</h2>
+      <h2>Courriel et téléphone</h2>
       <p>
-        Vous pouvez écrire à <a href={`mailto:${site.email}`}>{site.email}</a> pour une question générale
-        ou un rendez-vous sur demande. Le courriel n’est pas destiné aux renseignements personnels sur
-        la santé; n’incluez donc aucun détail sur votre santé dans votre message.
+        Vous pouvez appeler au <a href={site.phoneHref}>{site.phone}</a> ou écrire à <a
+          href={`mailto:${site.email}`}>{site.email}</a
+        > pour une question générale. Les rendez-vous sur demande peuvent être demandés par courriel.
+        Le courriel ordinaire et la messagerie vocale ne sont pas destinés aux renseignements personnels
+        sur la santé; n’incluez donc aucun détail sur votre santé dans un message.
       </p>
 
       <h2>Google Maps</h2>
@@ -56,8 +58,9 @@ import { site } from '../../../data/site';
       <h2>Questions et formats accessibles</h2>
       <p>
         Pour une question sur la confidentialité ou pour demander ces renseignements dans un format
-        accessible, écrivez à <a href={`mailto:${site.email}`}>{site.email}</a> sans inclure de renseignements
-        personnels sur la santé.
+        accessible, appelez au <a href={site.phoneHref}>{site.phone}</a> ou écrivez à <a
+          href={`mailto:${site.email}`}>{site.email}</a
+        > sans inclure de renseignements personnels sur la santé dans un courriel ou un message vocal.
       </p>
       <p><em>Dernière mise à jour : 11 août 2026.</em></p>
     </div>
