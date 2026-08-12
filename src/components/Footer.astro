@@ -18,7 +18,7 @@ const { locale } = Astro.props;
         height="180"
         alt=""
       />
-      <p class="footer-name">Sabrina McMorran, RMT <span lang="fr">/ MTI</span></p>
+      <p class="footer-name">Sabrina McMorran, RMT</p>
       <p>
         {
           locale === 'en'
@@ -29,12 +29,13 @@ const { locale } = Astro.props;
     </div>
     <div>
       <h2>{locale === 'en' ? 'Contact' : 'Coordonnées'}</h2>
+      <p><a href={site.phoneHref}>{site.phone}</a></p>
       <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
       <p class="small">
         {
           locale === 'en'
-            ? 'Please do not send personal health information by email.'
-            : 'N’envoyez aucun renseignement personnel sur la santé par courriel.'
+            ? 'Please do not send personal health information by email or leave it in voicemail.'
+            : 'N’envoyez aucun renseignement personnel sur la santé par courriel et n’en laissez pas dans un message vocal.'
         }
       </p>
     </div>
