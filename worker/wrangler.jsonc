@@ -10,7 +10,7 @@
   },
   "vars": {
     "SITE_ORIGIN": "http://localhost:4321",
-    "ALLOWED_GITHUB_USERS": "rapidrenting",
+    "ALLOWED_GITHUB_USERS": "rapidrenting,sabrinathermt",
   },
   "env": {
     "production": {
@@ -24,7 +24,7 @@
       ],
       "vars": {
         "SITE_ORIGIN": "https://sabrinathermt.com",
-        "ALLOWED_GITHUB_USERS": "rapidrenting",
+        "ALLOWED_GITHUB_USERS": "rapidrenting,sabrinathermt",
       },
     },
   },
