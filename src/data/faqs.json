@@ -23,6 +23,17 @@
       }
     },
     {
+      "id": "tmj-treatment",
+      "en": {
+        "question": "Does Sabrina offer TMJ treatment?",
+        "answer": "Treatment may include work to the muscles around the jaw and temporomandibular joint (TMJ) when it is appropriate for your needs. Sabrina will explain the proposed approach and obtain your informed consent before treatment."
+      },
+      "fr": {
+        "question": "Sabrina offre-t-elle des traitements de l’ATM?",
+        "answer": "Le traitement peut inclure un travail des muscles autour de la mâchoire et de l’articulation temporo-mandibulaire (ATM) lorsque cela convient à vos besoins. Sabrina vous expliquera l’approche proposée et obtiendra votre consentement éclairé avant le traitement."
+      }
+    },
+    {
       "id": "hours",
       "en": {
         "question": "When can I book with Sabrina?",

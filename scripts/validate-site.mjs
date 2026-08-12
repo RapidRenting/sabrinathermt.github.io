@@ -31,6 +31,11 @@ for (const path of required) {
   if (!files.has(path)) throw new Error(`Missing required build output: ${path}`);
 }
 
+const adminHtml = await readFile(files.get('admin/index.html'), 'utf8');
+if (!adminHtml.includes('id="nc-root"')) {
+  throw new Error('The FAQ editor must mount inside #nc-root so its loading message is replaced.');
+}
+
 const knownPaths = new Set(
   [...files.keys()]
     .filter((path) => path.endsWith('index.html'))
