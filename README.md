@@ -36,7 +36,7 @@ The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID 
 
 GitHub Actions builds and deploys `main` to GitHub Pages. The canonical domain is `https://sabrinathermt.com`.
 
-The CMS OAuth Worker is configured in `worker/wrangler.jsonc`. Production deployment requires the `GITHUB_OAUTH_ID` and `GITHUB_OAUTH_SECRET` secrets in Cloudflare. Add Sabrina’s exact lowercase GitHub username to `ALLOWED_GITHUB_USERS` before the editor acceptance test.
+The CMS OAuth Worker is configured in `worker/wrangler.jsonc`. Production deployment requires the `GITHUB_OAUTH_ID` and `GITHUB_OAUTH_SECRET` secrets in Cloudflare. Editor access is restricted to the lowercase GitHub usernames listed in `ALLOWED_GITHUB_USERS`; it currently includes `rapidrenting` and `sabrinathermt`.
 
 ## Content safeguards
 
