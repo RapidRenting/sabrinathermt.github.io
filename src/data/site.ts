@@ -1,7 +1,7 @@
 export const site = {
   name: 'Sabrina The RMT',
   practitioner: 'Sabrina McMorran',
-  email: 'sabrinathermt@gmail.com',
+  email: 'massage@sabrinathermt.com',
   phone: '613-801-6160',
   phoneHref: 'tel:+16138016160',
   origin: 'https://sabrinathermt.com',
