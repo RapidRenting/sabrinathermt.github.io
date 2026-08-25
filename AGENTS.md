@@ -5,4 +5,3 @@
 - Follow the README and existing package scripts. Run the focused tests, formatting or lint checks, and production build appropriate to the change.
 - Verify important pages and responsive states visually after interface changes.
 - Keep private contact, client, and health information out of the repository.
-
