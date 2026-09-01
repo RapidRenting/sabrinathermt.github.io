@@ -1,0 +1,37 @@
+---
+import type { Locale, locations } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  location: (typeof locations)[number];
+  eager?: boolean;
+}
+
+const { locale, location, eager = false } = Astro.props;
+const base = location.image.src.replace(/\.jpg$/, '');
+const srcset = (extension: 'avif' | 'webp') =>
+  [640, 960, 1400].map((width) => `${base}-${width}.${extension} ${width}w`).join(', ');
+---
+
+<picture>
+  <source
+    type="image/avif"
+    srcset={srcset('avif')}
+    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) 48vw, 610px"
+  />
+  <source
+    type="image/webp"
+    srcset={srcset('webp')}
+    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) 48vw, 610px"
+  />
+  <img
+    class="location-photo"
+    src={location.image.src}
+    alt={location.image.alt[locale]}
+    width="1400"
+    height="1867"
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : undefined}
+    decoding="async"
+  />
+</picture>

@@ -2,14 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingCta from '../../components/BookingCta.astro';
 import LocationCard from '../../components/LocationCard.astro';
+import { homeStructuredData } from '../../data/structuredData';
 import { locations } from '../../data/site';
 ---
 
 <BaseLayout
   locale="fr"
-  title="Sabrina The RMT"
-  description="Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, massothérapeute inscrite, à deux adresses à Ottawa."
+  title="Massothérapeute inscrite à Ottawa"
+  description="Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, massothérapeute inscrite, au centre-ville ou dans le Glebe à Ottawa."
   path="/fr/"
+  structuredData={homeStructuredData('fr')}
 >
   <section class="hero">
     <div class="shell hero-grid">

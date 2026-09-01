@@ -1,14 +1,17 @@
 ---
 import BookingCta from './BookingCta.astro';
+import LocationPhoto from './LocationPhoto.astro';
 import MapConsent from './MapConsent.astro';
 import type { Locale, locations } from '../data/site';
 
 interface Props {
   locale: Locale;
   location: (typeof locations)[number];
+  showDetailsLink?: boolean;
+  eagerPhoto?: boolean;
 }
 
-const { locale, location } = Astro.props;
+const { locale, location, showDetailsLink = true, eagerPhoto = false } = Astro.props;
 const address = locale === 'en' ? location.address : location.addressFr;
 ---
 
@@ -38,25 +41,21 @@ const address = locale === 'en' ? location.address : location.addressFr;
         href={location.bookingUrl}
         label={locale === 'en' ? `Book ${location.name.en}` : `Réserver à ${location.name.fr}`}
       />
-      <a
-        class="text-link"
-        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`}
-        rel="external"
-      >
+      <a class="text-link" href={location.directionsUrl} rel="external">
         {locale === 'en' ? 'Get directions' : 'Itinéraire'}<span aria-hidden="true"> ↗</span>
       </a>
+      {
+        showDetailsLink && (
+          <a class="text-link" href={location.path[locale]}>
+            {locale === 'en' ? 'Location details' : 'Renseignements'}
+            <span aria-hidden="true"> →</span>
+          </a>
+        )
+      }
     </div>
   </div>
   <div class="location-media">
-    <img
-      class="location-photo"
-      src={location.image.src}
-      alt={location.image.alt[locale]}
-      width="1400"
-      height="1867"
-      loading="lazy"
-      decoding="async"
-    />
+    <LocationPhoto locale={locale} location={location} eager={eagerPhoto} />
     <MapConsent locale={locale} mapUrl={location.mapUrl} locationName={location.name[locale]} />
   </div>
 </article>

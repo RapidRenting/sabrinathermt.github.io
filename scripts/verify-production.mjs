@@ -20,6 +20,8 @@ const routePairs = [
   ['/meet-sabrina/', '/fr/rencontrez-sabrina/'],
   ['/faq/', '/fr/faq/'],
   ['/privacy/', '/fr/confidentialite/'],
+  ['/locations/centretown-gladstone/', '/fr/lieux/centre-ville-gladstone/'],
+  ['/locations/glebe-fourth/', '/fr/lieux/glebe-fourth/'],
 ];
 const bookingUrls = [
   'https://sabrinathermt.janeapp.com/',
@@ -117,6 +119,7 @@ for (const [englishPath, frenchPath] of routePairs) {
     const url = `${origin}${path}`;
     const html = await (await requireOk(url)).text();
     assert(html.includes(`<html lang="${locale}"`), `${url} is missing lang="${locale}".`);
+    assert(!html.includes('noindex'), `${url} is unexpectedly blocked from indexing.`);
     assert(
       html.includes(`<link rel="canonical" href="${url}"`),
       `${url} has an incorrect canonical URL.`,
@@ -129,6 +132,7 @@ for (const [englishPath, frenchPath] of routePairs) {
 }
 
 const robots = await (await requireOk(`${origin}/robots.txt`)).text();
+assert(!/^Disallow:\s*\/$/m.test(robots), 'robots.txt blocks the public site root.');
 assert(
   robots.includes(`Sitemap: ${origin}/sitemap-index.xml`),
   'robots.txt has an incorrect sitemap URL.',

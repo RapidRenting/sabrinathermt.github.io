@@ -388,6 +388,10 @@ address {
   background: var(--cream-deep);
 }
 
+.location-media picture {
+  display: block;
+}
+
 .location-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -516,6 +520,27 @@ address {
 
 .page-header .button {
   margin-bottom: 2.5rem;
+}
+
+.location-page-header .page-lede {
+  margin-bottom: 0;
+}
+
+.location-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.8rem;
+}
+
+.location-page-actions .button {
+  margin-bottom: 0;
+}
+
+.location-related h2 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
 }
 
 .content-narrow {
@@ -718,6 +743,7 @@ address {
 
   .hero-actions .button,
   .location-actions .button,
+  .location-page-actions .button,
   .cta-actions .button {
     width: 100%;
   }

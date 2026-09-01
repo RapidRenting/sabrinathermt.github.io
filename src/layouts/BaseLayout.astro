@@ -10,6 +10,7 @@ interface Props {
   description: string;
   path: string;
   image?: string;
+  imageAlt?: string;
   structuredData?: Record<string, unknown>;
 }
 
@@ -19,6 +20,7 @@ const {
   description,
   path,
   image = '/assets/sabrinathermt-logo-mulberry.png',
+  imageAlt = 'Sabrina The RMT',
   structuredData,
 } = Astro.props;
 const canonical = new URL(path, site.origin).href;
@@ -36,8 +38,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#5b3a5d" />
     <meta name="description" content={description} />
-    <!-- Soft-launch safeguard: switch to index/follow only after Sabrina approves both languages. -->
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={locale === 'en' ? 'fr-CA' : 'en-CA'} href={alternate} />
     <link rel="alternate" hreflang={locale === 'en' ? 'en-CA' : 'fr-CA'} href={canonical} />
@@ -51,7 +52,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL(image, site.origin).href} />
-    <meta property="og:image:alt" content="Sabrina The RMT" />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     {
       structuredData && (

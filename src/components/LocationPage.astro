@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCta from './BookingCta.astro';
+import LocationCard from './LocationCard.astro';
+import { locationStructuredData } from '../data/structuredData';
+import { locations, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  location: (typeof locations)[number];
+}
+
+const { locale, location } = Astro.props;
+const copy = location.seo[locale];
+const otherLocation = locations.find((candidate) => candidate.id !== location.id)!;
+const directionsLabel = locale === 'en' ? 'Get directions' : 'Itinéraire';
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={copy.description}
+  path={location.path[locale]}
+  image={location.image.src}
+  imageAlt={location.image.alt[locale]}
+  structuredData={locationStructuredData(location, locale)}
+>
+  <section class="page-header location-page-header">
+    <div class="shell">
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.heading}</h1>
+      <p class="page-lede">{copy.intro}</p>
+      <div class="location-page-actions">
+        <BookingCta
+          locale={locale}
+          href={location.bookingUrl}
+          label={locale === 'en' ? `Book ${location.name.en}` : `Réserver à ${location.name.fr}`}
+        />
+        <a class="button button-secondary" href={location.directionsUrl} rel="external">
+          {directionsLabel}<span aria-hidden="true"> ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell location-grid">
+      <LocationCard locale={locale} location={location} showDetailsLink={false} eagerPhoto />
+    </div>
+  </section>
+
+  <section class="section location-related">
+    <div class="shell content-narrow">
+      <p class="eyebrow">
+        {locale === 'en' ? 'Another Ottawa option' : 'Un autre lieu à Ottawa'}
+      </p>
+      <h2>
+        {
+          locale === 'en'
+            ? `Looking for the ${otherLocation.name.en} location?`
+            : `Vous cherchez le lieu ${otherLocation.name.fr}?`
+        }
+      </h2>
+      <p>
+        {
+          locale === 'en'
+            ? `Compare the address, bookable hours, parking information and current Jane availability for ${otherLocation.area.en}.`
+            : `Comparez l’adresse, les heures de rendez-vous, le stationnement et les disponibilités actuelles dans Jane pour ${otherLocation.area.fr}.`
+        }
+      </p>
+      <a class="text-link" href={otherLocation.path[locale]}>
+        {
+          locale === 'en'
+            ? `View ${otherLocation.name.en} location details`
+            : `Voir les renseignements du lieu ${otherLocation.name.fr}`
+        }<span aria-hidden="true"> →</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

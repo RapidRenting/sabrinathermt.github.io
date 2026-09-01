@@ -11,6 +11,10 @@ const required = [
   'fr/faq/index.html',
   'privacy/index.html',
   'fr/confidentialite/index.html',
+  'locations/centretown-gladstone/index.html',
+  'locations/glebe-fourth/index.html',
+  'fr/lieux/centre-ville-gladstone/index.html',
+  'fr/lieux/glebe-fourth/index.html',
   'robots.txt',
   'sitemap-index.xml',
   'admin/index.html',
@@ -45,6 +49,9 @@ const knownPaths = new Set(
 for (const [path, full] of files) {
   if (extname(full) !== '.html') continue;
   const html = await readFile(full, 'utf8');
+  if (!path.startsWith('admin/') && html.includes('noindex')) {
+    throw new Error(`Public page must be indexable: ${path}`);
+  }
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = match[1];
     if (href.startsWith('/assets/') || href.startsWith('/admin/')) continue;
@@ -52,6 +59,20 @@ for (const [path, full] of files) {
     const normalized = href.endsWith('/') ? href : `${href}/`;
     if (!knownPaths.has(normalized)) {
       throw new Error(`Broken internal link in ${path}: ${href}`);
+    }
+  }
+}
+
+const robots = await readFile(files.get('robots.txt'), 'utf8');
+if (robots.includes('Disallow: /\n') || robots.includes('Disallow: /\r\n')) {
+  throw new Error('robots.txt must not block the public site root.');
+}
+
+for (const location of ['gladstone-entrance', 'fourth-entrance']) {
+  for (const width of [640, 960, 1400]) {
+    for (const extension of ['avif', 'webp']) {
+      const path = `assets/locations/${location}-${width}.${extension}`;
+      if (!files.has(path)) throw new Error(`Missing responsive location image: ${path}`);
     }
   }
 }
