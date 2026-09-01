@@ -47,5 +47,16 @@ const address = locale === 'en' ? location.address : location.addressFr;
       </a>
     </div>
   </div>
-  <MapConsent locale={locale} mapUrl={location.mapUrl} locationName={location.name[locale]} />
+  <div class="location-media">
+    <img
+      class="location-photo"
+      src={location.image.src}
+      alt={location.image.alt[locale]}
+      width="1400"
+      height="1867"
+      loading="lazy"
+      decoding="async"
+    />
+    <MapConsent locale={locale} mapUrl={location.mapUrl} locationName={location.name[locale]} />
+  </div>
 </article>

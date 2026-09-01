@@ -381,6 +381,20 @@ address {
   font-weight: 800;
 }
 
+.location-media {
+  display: grid;
+  grid-template-rows: auto minmax(260px, 1fr);
+  min-width: 0;
+  background: var(--cream-deep);
+}
+
+.location-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
 .hours {
   display: grid;
   grid-template-columns: minmax(7rem, auto) 1fr;
@@ -404,6 +418,11 @@ address {
 .map-consent {
   min-height: 440px;
   background: var(--cream-deep);
+}
+
+.location-media .map-consent,
+.location-media .map-consent iframe {
+  min-height: 260px;
 }
 
 .map-placeholder {
@@ -642,13 +661,17 @@ address {
     order: initial;
   }
 
-  .location-card:nth-child(even) .map-consent {
+  .location-card:nth-child(even) .location-media {
     order: 2;
   }
 
-  .map-consent,
-  .map-consent iframe {
-    min-height: 340px;
+  .location-media {
+    grid-template-rows: auto minmax(300px, 1fr);
+  }
+
+  .location-media .map-consent,
+  .location-media .map-consent iframe {
+    min-height: 300px;
   }
 
   .cta-grid {

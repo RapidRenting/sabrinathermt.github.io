@@ -22,6 +22,13 @@ export const locations = [
     address: 'Unit 1, 481 Gladstone Avenue, Ottawa, ON K1R 5N7',
     addressFr: 'Unité 1, 481, avenue Gladstone, Ottawa (Ontario) K1R 5N7',
     bookingUrl: site.booking.gladstone,
+    image: {
+      src: '/assets/locations/gladstone-entrance.jpg',
+      alt: {
+        en: 'Sabrina standing outside the 481 Gladstone Avenue entrance with a Sabrina The RMT sign.',
+        fr: 'Sabrina devant l’entrée du 481, avenue Gladstone, avec une enseigne Sabrina The RMT.',
+      },
+    },
     mapUrl:
       'https://www.google.com/maps?q=Unit%201%2C%20481%20Gladstone%20Avenue%2C%20Ottawa%2C%20ON%20K1R%205N7&output=embed',
     hours: {
@@ -48,6 +55,13 @@ export const locations = [
     address: '101 Fourth Avenue, 2nd Floor, Ottawa, ON K1S 2L1',
     addressFr: '101, avenue Fourth, 2e étage, Ottawa (Ontario) K1S 2L1',
     bookingUrl: site.booking.fourth,
+    image: {
+      src: '/assets/locations/fourth-entrance.jpg',
+      alt: {
+        en: 'Sabrina at The Movement Co. entrance on Fourth Avenue with a Sabrina The RMT sign.',
+        fr: 'Sabrina à l’entrée de The Movement Co. sur l’avenue Fourth avec une enseigne Sabrina The RMT.',
+      },
+    },
     mapUrl:
       'https://www.google.com/maps?q=The%20Movement%20Co.%2C%20101%20Fourth%20Avenue%2C%20Ottawa%2C%20ON%20K1S%202L1&output=embed',
     hours: {
