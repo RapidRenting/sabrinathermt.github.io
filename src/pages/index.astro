@@ -2,52 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookingCta from '../components/BookingCta.astro';
 import LocationCard from '../components/LocationCard.astro';
-import { locations, site } from '../data/site';
-
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Person',
-      '@id': `${site.origin}/#sabrina-mcmorran`,
-      name: 'Sabrina McMorran',
-      jobTitle: 'Registered Massage Therapist',
-      url: site.origin,
-      email: site.email,
-      knowsLanguage: ['en', 'fr'],
-      worksFor: { '@id': `${site.origin}/#business` },
-    },
-    {
-      '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
-      '@id': `${site.origin}/#business`,
-      name: 'Sabrina The RMT',
-      url: site.origin,
-      email: site.email,
-      telephone: '+16138016160',
-      employee: { '@id': `${site.origin}/#sabrina-mcmorran` },
-      location: locations.map((location) => ({
-        '@type': 'Place',
-        name: `${location.name.en} location`,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: location.address.split(', Ottawa')[0],
-          addressLocality: 'Ottawa',
-          addressRegion: 'ON',
-          postalCode: location.address.slice(-7),
-          addressCountry: 'CA',
-        },
-      })),
-    },
-  ],
-};
+import { homeStructuredData } from '../data/structuredData';
+import { locations } from '../data/site';
 ---
 
 <BaseLayout
   locale="en"
-  title="Sabrina The RMT"
-  description="Book individualized massage therapy with Sabrina McMorran, Registered Massage Therapist, at two Ottawa locations."
+  title="Registered Massage Therapist in Ottawa"
+  description="Book individualized massage therapy with Sabrina McMorran, Registered Massage Therapist, in Centretown or the Glebe in Ottawa."
   path="/"
-  structuredData={structuredData}
+  structuredData={homeStructuredData('en')}
 >
   <section class="hero">
     <div class="shell hero-grid">

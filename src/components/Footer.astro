@@ -43,6 +43,19 @@ const { locale } = Astro.props;
       <h2>{locale === 'en' ? 'Information' : 'Renseignements'}</h2>
       <ul class="footer-links">
         <li>
+          <a
+            href={locale === 'en'
+              ? '/locations/centretown-gladstone/'
+              : '/fr/lieux/centre-ville-gladstone/'}
+            >{locale === 'en' ? 'Centretown / Gladstone' : 'Centre-ville / Gladstone'}</a
+          >
+        </li>
+        <li>
+          <a href={locale === 'en' ? '/locations/glebe-fourth/' : '/fr/lieux/glebe-fourth/'}
+            >{locale === 'en' ? 'Glebe / Fourth' : 'Glebe / Fourth'}</a
+          >
+        </li>
+        <li>
           <a href={locale === 'en' ? '/privacy/' : '/fr/confidentialite/'}
             >{locale === 'en' ? 'Privacy' : 'Confidentialité'}</a
           >

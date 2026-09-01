@@ -1,0 +1,8 @@
+---
+import LocationPage from '../../../../components/LocationPage.astro';
+import { locations } from '../../../../data/site';
+
+const location = locations.find((candidate) => candidate.id === 'fourth')!;
+---
+
+<LocationPage locale="fr" location={location} />
