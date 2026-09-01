@@ -23,8 +23,8 @@ const routePairs = [
 ];
 const bookingUrls = [
   'https://sabrinathermt.janeapp.com/',
-  'https://sabrinathermt.janeapp.com/locations/gladstone-location/book',
-  'https://sabrinathermt.janeapp.com/locations/fourth-location/book',
+  'https://sabrinathermt.janeapp.com/locations/centretown-location/book',
+  'https://sabrinathermt.janeapp.com/locations/glebe-location/book',
 ];
 
 function normalize(values) {
