@@ -28,6 +28,30 @@ npm run verify:production
 
 This checks the required GitHub Pages DNS records, preserved Google Workspace mail records, the retained GitHub verification challenge, HTTPS and `www` redirects, every bilingual canonical/alternate pair, robots and sitemaps, and all Jane booking destinations.
 
+## Search and website statistics
+
+Google Search Console is configured for the domain `sabrinathermt.com`. The submitted
+sitemap is `https://sabrinathermt.com/sitemap-index.xml`. On September 6, 2026,
+Search Console reported a successful sitemap read on September 4 and 12 discovered
+pages; the page-indexing report was still processing. Discovery does not guarantee
+indexing. Review Performance for queries, impressions and clicks, and Pages for
+indexing issues once data is available.
+
+Cloudflare Web Analytics is configured in Sabrina's Cloudflare account. The
+`WebAnalytics.astro` component loads its cookie-free beacon only on the canonical
+production hostname, keeping local previews out of the reports. The site token is
+public and is not an account credential. Both privacy pages describe the service.
+The integration starts collecting only after these website changes are published.
+
+Use Cloudflare's visits, page views, referrers and page performance alongside
+Search Console's search queries and clicks. These reports do not measure completed
+Jane appointments or identify patients. Review trends over several weeks rather
+than drawing conclusions from the site's first few visits.
+
+Search Console also flags an unused ownership token associated with a Google
+temporary account. Do not remove the DNS verification record without checking
+whether Google Workspace still depends on it.
+
 ## FAQ editing
 
 The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `/admin/` uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.

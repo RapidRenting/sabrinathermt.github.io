@@ -9,8 +9,8 @@ export const site = {
   registerUrl: 'https://cmto.ca.thentiacloud.net/webs/cmto/register/#/',
   booking: {
     main: 'https://sabrinathermt.janeapp.com/',
-    gladstone: 'https://sabrinathermt.janeapp.com/locations/centretown-location/book',
-    fourth: 'https://sabrinathermt.janeapp.com/locations/glebe-location/book',
+    gladstone: 'https://sabrinathermt.janeapp.com/locations/centretown-481-gladstone-ave/book',
+    fourth: 'https://sabrinathermt.janeapp.com/locations/glebe-101-fourth-avenue/book',
   },
 } as const;
 
