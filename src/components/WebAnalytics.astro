@@ -1,0 +1,10 @@
+<!-- This public token identifies the site; it does not grant account access. -->
+<script is:inline type="module">
+  if (window.location.hostname === 'sabrinathermt.com') {
+    const beacon = document.createElement('script');
+    beacon.type = 'module';
+    beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    beacon.dataset.cfBeacon = JSON.stringify({ token: '62fd31255c62423cb772baa4689cd319' });
+    document.body.appendChild(beacon);
+  }
+</script>
