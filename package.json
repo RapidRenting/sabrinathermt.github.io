@@ -19,16 +19,22 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
-    "astro": "7.2.0"
+    "astro": "7.3.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@cloudflare/vitest-pool-workers": "0.21.0",
-    "@cloudflare/workers-types": "5.20260811.1",
+    "@cloudflare/vitest-pool-workers": "0.22.0",
+    "@cloudflare/workers-types": "5.20260924.1",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.10",
-    "wrangler": "4.120.1"
+    "vitest": "4.1.11",
+    "wrangler": "4.138.0"
+  },
+  "overrides": {
+    "@cloudflare/vitest-pool-workers": {
+      "miniflare": "5.20260921.1-alpha",
+      "wrangler": "4.138.0"
+    }
   }
 }
