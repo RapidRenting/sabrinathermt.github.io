@@ -41,17 +41,19 @@ const address = locale === 'en' ? location.address : location.addressFr;
         href={location.bookingUrl}
         label={locale === 'en' ? `Book ${location.name.en}` : `Réserver à ${location.name.fr}`}
       />
-      <a class="text-link" href={location.directionsUrl} rel="external">
-        {locale === 'en' ? 'Get directions' : 'Itinéraire'}<span aria-hidden="true"> ↗</span>
-      </a>
-      {
-        showDetailsLink && (
-          <a class="text-link" href={location.path[locale]}>
-            {locale === 'en' ? 'Location details' : 'Renseignements'}
-            <span aria-hidden="true"> →</span>
-          </a>
-        )
-      }
+      <div class="location-secondary-actions">
+        <a class="text-link" href={location.directionsUrl} rel="external">
+          {locale === 'en' ? 'Get directions' : 'Itinéraire'}<span aria-hidden="true"> ↗</span>
+        </a>
+        {
+          showDetailsLink && (
+            <a class="text-link" href={location.path[locale]}>
+              {locale === 'en' ? 'Location details' : 'Renseignements'}
+              <span aria-hidden="true"> →</span>
+            </a>
+          )
+        }
+      </div>
     </div>
   </div>
   <div class="location-media">

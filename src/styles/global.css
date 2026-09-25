@@ -243,6 +243,17 @@ h1 {
   margin-top: 1.8rem;
 }
 
+.location-secondary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.location-secondary-actions .text-link {
+  white-space: nowrap;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -751,6 +762,21 @@ address {
   .footer-bottom {
     flex-direction: column;
     gap: 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .header-inner nav {
+    overflow-x: visible;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding-bottom: 0;
+    text-align: center;
+    white-space: normal;
   }
 }
 
