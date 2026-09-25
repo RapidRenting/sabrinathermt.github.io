@@ -765,6 +765,21 @@ address {
   }
 }
 
+@media (max-width: 370px) {
+  .header-inner nav {
+    overflow-x: visible;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding-bottom: 0;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
