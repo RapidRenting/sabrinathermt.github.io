@@ -6,7 +6,7 @@ import { site } from '../../../data/site';
 <BaseLayout
   locale="fr"
   title="Confidentialité"
-  description="Comment Sabrina The RMT traite la confidentialité du site, les courriels, les liens de réservation Jane et les cartes Google facultatives."
+  description="Comment Sabrina The RMT traite la confidentialité du site, les courriels, les textos, les liens de réservation Jane et les cartes Google facultatives."
   path="/fr/confidentialite/"
 >
   <header class="page-header">
@@ -54,12 +54,74 @@ import { site } from '../../../data/site';
 
       <h2>Courriel et téléphone</h2>
       <p>
-        Vous pouvez appeler au <a href={site.phoneHref}>{site.phone}</a> ou écrire à <a
-          href={`mailto:${site.email}`}>{site.email}</a
-        > pour une question générale. Les rendez-vous sur demande peuvent être demandés par courriel.
-        Le courriel ordinaire et la messagerie vocale ne sont pas destinés aux renseignements personnels
-        sur la santé; n’incluez donc aucun détail sur votre santé dans un message.
+        Vous pouvez appeler au <a href={site.phoneHref}>{site.phone}</a> pour une question urgente liée
+        à un rendez-vous, par exemple si vous êtes en retard ou devez l’annuler. Pour les questions générales
+        sur les réservations, les demandes de rendez-vous ou les autres questions non urgentes, veuillez
+        écrire à <a href={`mailto:${site.email}`}>{site.email}</a>. Le courriel ordinaire et la
+        messagerie vocale ne sont pas destinés aux renseignements personnels sur la santé; n’incluez
+        donc aucun détail sur votre santé dans un message.
       </p>
+
+      <h2>Consentement aux textos et confidentialité</h2>
+      <p>
+        SabrinatheRMT n’envoie pas de textos promotionnels ou publicitaires. Les textos servent
+        uniquement aux échanges généraux, par exemple pour répondre à une demande de renseignements
+        ou traiter une question liée à un rendez-vous. Veuillez ne pas envoyer de renseignements
+        personnels sur la santé par texto.
+      </p>
+      <p>
+        SabrinatheRMT peut envoyer un texto uniquement en réponse à un message que vous lui avez
+        envoyé ou si vous avez accepté séparément de recevoir un texto au sujet d’un rendez-vous. Le
+        consentement à recevoir des textos n’est pas nécessaire pour obtenir des services de
+        massothérapie. La fréquence des messages varie selon les besoins de communication, et des
+        frais de messagerie et de données peuvent s’appliquer.
+      </p>
+
+      <h3>Partage des données</h3>
+      <ul>
+        <li>
+          Les données des clients ne sont pas communiquées à des tiers à des fins promotionnelles ou
+          publicitaires.
+        </li>
+        <li>
+          Les données relatives à l’inscription et au consentement aux textos ne sont jamais
+          communiquées à qui que ce soit, à quelque fin que ce soit. Toute mention de partage de
+          renseignements ailleurs dans cette politique exclut ces données.
+        </li>
+      </ul>
+
+      <h3>Modalités du service de messagerie</h3>
+      <ol>
+        <li>
+          Le programme de messagerie consiste en des échanges généraux visant à répondre aux
+          questions et à offrir du soutien aux clients.
+        </li>
+        <li>
+          Vous pouvez mettre fin au service de textos en tout temps. Répondez STOP au numéro qui
+          vous a envoyé des messages. Après l’envoi de STOP, vous recevrez une confirmation de votre
+          désabonnement. Vous ne recevrez ensuite plus de textos de SabrinatheRMT, sauf si vous
+          demandez la réactivation de la messagerie.
+        </li>
+        <li>
+          Si vous éprouvez des difficultés avec le programme de messagerie, répondez HELP pour
+          obtenir de l’aide ou écrivez à <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </li>
+        <li>
+          Les fournisseurs de services sans fil ne sont pas responsables des messages retardés ou
+          non livrés.
+        </li>
+        <li>
+          Des frais de messagerie et de données peuvent s’appliquer aux messages que SabrinatheRMT
+          vous envoie et à ceux que vous lui envoyez. La fréquence des messages varie selon les
+          besoins de communication. Communiquez avec votre fournisseur de services sans fil pour
+          toute question concernant votre forfait de messagerie ou de données.
+        </li>
+        <li>
+          Pour toute question sur la confidentialité, consultez cette politique ou écrivez à <a
+            href={`mailto:${site.email}`}>{site.email}</a
+          >.
+        </li>
+      </ol>
 
       <h2>Google Maps</h2>
       <p>
@@ -75,7 +137,7 @@ import { site } from '../../../data/site';
           href={`mailto:${site.email}`}>{site.email}</a
         > sans inclure de renseignements personnels sur la santé dans un courriel ou un message vocal.
       </p>
-      <p><em>Dernière mise à jour : 6 septembre 2026.</em></p>
+      <p><em>Dernière mise à jour : 25 septembre 2026.</em></p>
     </div>
   </section>
 </BaseLayout>

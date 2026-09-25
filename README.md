@@ -65,6 +65,7 @@ The CMS OAuth Worker is configured in `worker/wrangler.jsonc`. Production deploy
 ## Content safeguards
 
 - Do not add testimonials, ratings, superiority claims, guaranteed outcomes, implied specialties or CMTO branding.
-- Do not collect personal health information through this website or ordinary email.
+- Do not collect personal health information through this website, ordinary email or text messages.
+- Keep the English and French privacy pages and contact FAQs aligned with Sabrina's approved messaging practices.
 - Keep current availability, fees, booking policies and health-history collection in Jane.
 - Sabrina must approve French healthcare and marketing wording before publication.
