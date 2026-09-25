@@ -6,7 +6,7 @@ import { site } from '../../data/site';
 <BaseLayout
   locale="en"
   title="Privacy"
-  description="How Sabrina The RMT handles website privacy, email, Jane booking links and optional Google Maps."
+  description="How Sabrina The RMT handles website privacy, email, text messages, Jane booking links and optional Google Maps."
   path="/privacy/"
 >
   <header class="page-header">
@@ -50,12 +50,66 @@ import { site } from '../../data/site';
 
       <h2>Email and telephone</h2>
       <p>
-        You may call <a href={site.phoneHref}>{site.phone}</a> or email <a
-          href={`mailto:${site.email}`}>{site.email}</a
-        > for general questions. By-request appointments can be requested by email. Ordinary email and
-        voicemail are not intended for personal health information, so please do not include health details
-        in a message.
+        You may call <a href={site.phoneHref}>{site.phone}</a> about a time-sensitive appointment matter,
+        such as running late or cancelling an appointment. For general booking questions, appointment
+        requests or other non-urgent matters, please email <a href={`mailto:${site.email}`}
+          >{site.email}</a
+        >. Ordinary email and voicemail are not intended for personal health information, so please
+        do not include health details in a message.
       </p>
+
+      <h2>Text messaging consent and privacy</h2>
+      <p>
+        SabrinatheRMT does not send promotional or marketing text messages. Text messaging is used
+        only for general conversational support, such as responding to an inquiry or addressing an
+        appointment-related matter. Please do not send personal health information by text message.
+      </p>
+      <p>
+        SabrinatheRMT may send a text message only in response to a message you send, or when you
+        have separately agreed to receive a text about an appointment-related matter. Consent to
+        receive text messages is not required to receive massage therapy services. Message frequency
+        varies based on communication needs, and message and data rates may apply.
+      </p>
+
+      <h3>Data sharing</h3>
+      <ul>
+        <li>
+          Customer data is not shared with third parties for promotional or marketing purposes.
+        </li>
+        <li>
+          Mobile opt-in and consent are never shared with anyone for any purpose. Any information
+          sharing mentioned elsewhere in this policy excludes mobile opt-in data.
+        </li>
+      </ul>
+
+      <h3>Messaging terms and conditions</h3>
+      <ol>
+        <li>
+          The messaging program consists of general conversational messaging to answer questions and
+          provide support to customers.
+        </li>
+        <li>
+          You can cancel the SMS service at any time. Reply STOP to the phone number from which you
+          received messages. After you send STOP, you will receive a confirmation that you have been
+          unsubscribed. After that, you will not receive SMS messages from SabrinatheRMT unless
+          messaging is re-enabled at your request.
+        </li>
+        <li>
+          If you are experiencing issues with the messaging program, reply HELP for assistance or
+          email
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </li>
+        <li>Carriers are not liable for delayed or undelivered messages.</li>
+        <li>
+          Message and data rates may apply for messages sent to you from SabrinatheRMT and to
+          SabrinatheRMT from you. Message frequency varies based on communication needs. Contact
+          your wireless provider with questions about your text or data plan.
+        </li>
+        <li>
+          For privacy questions, please review this policy or email
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </li>
+      </ol>
 
       <h2>Google Maps</h2>
       <p>
@@ -71,7 +125,7 @@ import { site } from '../../data/site';
         > or email <a href={`mailto:${site.email}`}>{site.email}</a> without including personal health
         information in email or voicemail.
       </p>
-      <p><em>Last updated: September 6, 2026.</em></p>
+      <p><em>Last updated: September 25, 2026.</em></p>
     </div>
   </section>
 </BaseLayout>
