@@ -3,14 +3,15 @@ import { headshot } from '../data/headshot';
 
 interface Props {
   locale: 'en' | 'fr';
+  variant?: 'profile' | 'hero';
 }
 
-const { locale } = Astro.props;
+const { locale, variant = 'profile' } = Astro.props;
 ---
 
 {
   headshot && (
-    <div class="portrait">
+    <div class:list={['portrait', { 'portrait-hero': variant === 'hero' }]}>
       <img
         src={headshot.src}
         width={headshot.width}
@@ -26,17 +27,38 @@ const { locale } = Astro.props;
 
 <style>
   .portrait {
+    position: relative;
+    z-index: 1;
     width: min(100%, 20rem);
     margin-inline: auto;
-    border-radius: 10rem 10rem 1.5rem 1.5rem;
-    overflow: hidden;
+  }
+
+  .portrait-hero {
+    width: min(100%, 520px);
+  }
+
+  .portrait::before {
+    position: absolute;
+    inset: -1rem 1.2rem 1rem -1.2rem;
+    z-index: -1;
+    border: 1px solid var(--blush);
+    border-radius: 48% 52% 45% 55%;
+    content: '';
   }
 
   img {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1;
+    border-radius: 48% 52% 45% 55%;
+    box-shadow: var(--shadow);
     object-fit: cover;
+  }
+
+  @media (max-width: 860px) {
+    .portrait-hero {
+      max-width: 460px;
+    }
   }
 </style>

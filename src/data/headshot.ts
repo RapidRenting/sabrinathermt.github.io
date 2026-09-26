@@ -10,5 +10,5 @@ export const headshot: Headshot | null = {
   src: '/assets/sabrina-headshot.webp',
   width: 960,
   height: 1200,
-  focalPoint: '50% 35%',
+  focalPoint: '50% 0%',
 };
