@@ -1,8 +1,11 @@
 # Sabrina's headshot
 
-The English and French Meet Sabrina pages are ready for an approved photograph.
-Until it is configured, they keep their text-only introduction with no empty
-photo frame or public placeholder message.
+The English and French Meet Sabrina pages use the approved, lightly retouched
+IMG_7231 portrait, selected on September 26, 2026. The website asset is a 960 × 1200
+WebP with no EXIF or location metadata. The supplied HEIC originals and review
+copies remain outside the published assets.
+
+To replace the portrait:
 
 1. Save the approved, optimized image to `public/assets/sabrina-headshot.webp`.
    Use a real photograph supplied by Sabrina, remove embedded location/EXIF
