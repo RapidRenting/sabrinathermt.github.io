@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingCta from '../../components/BookingCta.astro';
 import LocationCard from '../../components/LocationCard.astro';
+import SabrinaPortrait from '../../components/SabrinaPortrait.astro';
 import { homeStructuredData } from '../../data/structuredData';
 import { locations } from '../../data/site';
 ---
@@ -28,14 +29,7 @@ import { locations } from '../../data/site';
           <a class="button button-secondary" href="#locations">Choisir un lieu</a>
         </div>
       </div>
-      <div class="hero-art">
-        <img
-          src="/assets/03-line-symbol-background.jpg"
-          width="1200"
-          height="1200"
-          alt="Symbole linéaire de Sabrina The RMT"
-        />
-      </div>
+      <SabrinaPortrait locale="fr" variant="hero" />
     </div>
   </section>
 

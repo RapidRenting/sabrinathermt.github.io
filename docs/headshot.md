@@ -1,6 +1,6 @@
 # Sabrina's headshot
 
-The English and French Meet Sabrina pages use the approved, lightly retouched
+The English and French home and Meet Sabrina pages use the approved, lightly retouched
 IMG_7231 portrait, selected on September 26, 2026. The website asset is a 960 × 1200
 WebP with no EXIF or location metadata. The supplied HEIC originals and review
 copies remain outside the published assets.
@@ -24,7 +24,9 @@ To replace the portrait:
    Set `width` and `height` to the actual file dimensions. A portrait crop around
    4:5, at least 800 pixels wide, suits the layout. Leave space around Sabrina's
    head and shoulders. `focalPoint` controls the crop; adjust it to keep her face
-   visible on desktop and mobile. The display has a rounded arch at the top.
+   visible on desktop and mobile. The shared display uses the original organic
+   rounded shape and offset outline, with a square crop. The current portrait is
+   aligned to the top to preserve space above Sabrina's hair.
 
 3. The shared component supplies concise, localized alt text: “Portrait of
    Sabrina McMorran” / “Portrait de Sabrina McMorran”. Update this text only if the
