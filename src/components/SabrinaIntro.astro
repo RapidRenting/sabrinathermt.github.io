@@ -1,0 +1,40 @@
+---
+import SabrinaPortrait from './SabrinaPortrait.astro';
+import { headshot } from '../data/headshot';
+
+interface Props {
+  locale: 'en' | 'fr';
+}
+
+const { locale } = Astro.props;
+---
+
+<div
+  class:list={[
+    'shell',
+    'sabrina-intro',
+    { 'content-narrow': !headshot, 'with-portrait': headshot },
+  ]}
+>
+  <div class="intro-copy"><slot /></div>
+  <SabrinaPortrait locale={locale} />
+</div>
+
+<style>
+  .with-portrait {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .intro-copy {
+    min-width: 0;
+  }
+
+  @media (min-width: 48rem) {
+    .with-portrait {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
+      gap: clamp(2rem, 5vw, 5rem);
+    }
+  }
+</style>

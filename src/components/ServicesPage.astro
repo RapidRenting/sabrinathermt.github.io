@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCta from './BookingCta.astro';
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = {
+  en: {
+    title: 'Services & pricing',
+    description:
+      'Explore individualized massage therapy with Sabrina McMorran, RMT, and appointment fees for 30, 45, 60 and 90 minutes in Ottawa.',
+    path: '/services/',
+    eyebrow: 'Your appointment',
+    intro: 'Individualized massage therapy, with clear appointment options and fees.',
+    serviceHeading: 'Massage therapy shaped around you',
+    service:
+      'Sabrina tailors treatment to your needs using a blend of Swedish massage, myofascial work, trigger-point techniques, joint mobilizations and stretching. Remedial exercises may also be provided when helpful.',
+    consent:
+      'Treatment may include work to the muscles around the jaw and temporomandibular joint (TMJ), when appropriate for your needs and with your consent.',
+    about: 'Learn more about Sabrina’s approach',
+    aboutPath: '/meet-sabrina/',
+    feesHeading: 'Appointment fees',
+    taxNote: 'All fees are in Canadian dollars. Tax is added to the prices below.',
+    duration: 'Duration',
+    fee: 'Fee',
+    booking: 'How to book',
+    minutes: 'minutes',
+    tax: '+ tax',
+    online: 'Book online through Jane',
+    request: 'By request only — cannot be booked online',
+    requestHeading: 'Request a 30-minute appointment',
+    requestIntro:
+      '30-minute appointments are available upon request. Contact Sabrina to request one:',
+    privacy: 'Please do not include personal health information in email.',
+  },
+  fr: {
+    title: 'Services et tarifs',
+    description:
+      'Découvrez la massothérapie individualisée avec Sabrina McMorran, MTI, et les tarifs des rendez-vous de 30, 45, 60 et 90 minutes à Ottawa.',
+    path: '/fr/services/',
+    eyebrow: 'Votre rendez-vous',
+    intro:
+      'Une massothérapie individualisée, avec des options de rendez-vous et des tarifs clairs.',
+    serviceHeading: 'Une massothérapie adaptée à vous',
+    service:
+      'Sabrina adapte le traitement à vos besoins en combinant massage suédois, travail myofascial, techniques de points gâchettes, mobilisations articulaires et étirements. Des exercices correctifs peuvent aussi être proposés au besoin.',
+    consent:
+      'Le traitement peut inclure les muscles autour de la mâchoire et de l’articulation temporomandibulaire (ATM), selon vos besoins et avec votre consentement.',
+    about: 'Découvrez l’approche de Sabrina',
+    aboutPath: '/fr/rencontrez-sabrina/',
+    feesHeading: 'Tarifs des rendez-vous',
+    taxNote: 'Tous les tarifs sont en dollars canadiens. Les taxes s’ajoutent aux prix ci-dessous.',
+    duration: 'Durée',
+    fee: 'Tarif',
+    booking: 'Réservation',
+    minutes: 'minutes',
+    tax: '+ taxes',
+    online: 'Réservez en ligne sur Jane',
+    request: 'Sur demande seulement — réservation en ligne impossible',
+    requestHeading: 'Demandez un rendez-vous de 30 minutes',
+    requestIntro:
+      'Les rendez-vous de 30 minutes sont offerts sur demande. Communiquez avec Sabrina pour en demander un :',
+    privacy:
+      'Veuillez ne pas inclure de renseignements personnels sur votre santé dans votre courriel.',
+  },
+}[locale];
+const appointments = [
+  { minutes: 30, fee: 100 },
+  { minutes: 45, fee: 120 },
+  { minutes: 60, fee: 140 },
+  { minutes: 90, fee: 200 },
+];
+---
+
+<BaseLayout locale={locale} title={copy.title} description={copy.description} path={copy.path}>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.title}</h1>
+      <p class="page-lede">{copy.intro}</p>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose">
+      <h2>{copy.serviceHeading}</h2>
+      <p>{copy.service}</p>
+      <p>{copy.consent}</p>
+      <p><a class="text-link" href={copy.aboutPath}>{copy.about}</a></p>
+
+      <h2>{copy.feesHeading}</h2>
+      <p id="fees-note">{copy.taxNote}</p>
+      <div class="pricing-table-wrap">
+        <table class="pricing-table" aria-describedby="fees-note">
+          <thead>
+            <tr
+              ><th scope="col">{copy.duration}</th><th scope="col">{copy.fee}</th><th scope="col"
+                >{copy.booking}</th
+              ></tr
+            >
+          </thead>
+          <tbody>
+            {
+              appointments.map((appointment) => (
+                <tr>
+                  <th scope="row">
+                    {appointment.minutes} {copy.minutes}
+                  </th>
+                  <td class="price">
+                    {locale === 'en' ? `$${appointment.fee}` : `${appointment.fee} $`}{' '}
+                    <span>{copy.tax}</span>
+                  </td>
+                  <td>
+                    {appointment.minutes === 30 ? (
+                      <a href="#request-30">{copy.request}</a>
+                    ) : (
+                      <a href={site.booking.main} rel="external">
+                        {copy.online}
+                      </a>
+                    )}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" id="request-30">
+        <h3>{copy.requestHeading}</h3>
+        <p>{copy.requestIntro}</p>
+        <p class="request-contact">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+        <p>{copy.privacy}</p>
+      </div>
+      <div class="cta-actions"><BookingCta locale={locale} /></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pricing-table-wrap {
+    margin-block: 1.5rem 2rem;
+    overflow-x: auto;
+    border: 1px solid var(--slate);
+    border-radius: 1rem;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1.1rem;
+    vertical-align: top;
+  }
+
+  .pricing-table thead {
+    color: var(--cream);
+    background: var(--slate);
+  }
+
+  .pricing-table tbody tr + tr {
+    border-top: 1px solid var(--cream-deep);
+  }
+
+  .pricing-table tbody th,
+  .price {
+    white-space: nowrap;
+  }
+
+  .price {
+    color: var(--mulberry);
+    font-weight: 700;
+  }
+
+  .price span {
+    color: var(--charcoal);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .request-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+
+  .callout h3 {
+    margin-top: 0;
+  }
+
+  @media (max-width: 600px) {
+    .pricing-table th,
+    .pricing-table td {
+      padding: 0.75rem 0.45rem;
+      font-size: 0.9rem;
+    }
+
+    .pricing-table tbody th {
+      white-space: normal;
+    }
+
+    .price span {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+</style>

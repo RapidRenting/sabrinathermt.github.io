@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BookingCta from '../../../components/BookingCta.astro';
+import SabrinaIntro from '../../../components/SabrinaIntro.astro';
 import { site } from '../../../data/site';
 ---
 
@@ -11,7 +12,7 @@ import { site } from '../../../data/site';
   path="/fr/rencontrez-sabrina/"
 >
   <header class="page-header">
-    <div class="shell content-narrow">
+    <SabrinaIntro locale="fr">
       <BookingCta locale="fr" />
       <p class="eyebrow">Rencontrez votre MTI</p>
       <h1>Des soins adaptés à votre réalité</h1>
@@ -19,7 +20,7 @@ import { site } from '../../../data/site';
         Sabrina McMorran est massothérapeute inscrite. Elle apporte curiosité, communication claire
         et approche individualisée à chaque rendez-vous.
       </p>
-    </div>
+    </SabrinaIntro>
   </header>
 
   <section class="section section-white">

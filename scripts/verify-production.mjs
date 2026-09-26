@@ -18,6 +18,7 @@ const expectedMx = [
 const routePairs = [
   ['/', '/fr/'],
   ['/meet-sabrina/', '/fr/rencontrez-sabrina/'],
+  ['/services/', '/fr/services/'],
   ['/faq/', '/fr/faq/'],
   ['/privacy/', '/fr/confidentialite/'],
   ['/locations/centretown-gladstone/', '/fr/lieux/centre-ville-gladstone/'],

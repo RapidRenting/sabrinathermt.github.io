@@ -52,6 +52,22 @@ Search Console also flags an unused ownership token associated with a Google
 temporary account. Do not remove the DNS verification record without checking
 whether Google Workspace still depends on it.
 
+## Services, pricing and headshot
+
+The bilingual Services & pricing pages are linked from the main navigation and footer.
+Appointment fees and service descriptions live in `src/components/ServicesPage.astro`.
+The 30-minute option is request-only and cannot be booked online; keep that exception
+aligned with the booking FAQ when editing appointment options.
+
+The header uses the existing S mark and the wordmark from the supplied raster logo,
+with the English brand slogan beneath it. Headshot setup for both Meet Sabrina
+pages is documented in [docs/headshot.md](docs/headshot.md).
+
+Shared colors live in `src/styles/global.css`: mulberry is the header and primary
+action color, slate blue is the secondary color for links, outlined actions and
+callouts. The same slate blue fills page introductions and pricing headings, with
+cream text for contrast.
+
 ## FAQ editing
 
 The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `/admin/` uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.
@@ -67,5 +83,5 @@ The CMS OAuth Worker is configured in `worker/wrangler.jsonc`. Production deploy
 - Do not add testimonials, ratings, superiority claims, guaranteed outcomes, implied specialties or CMTO branding.
 - Do not collect personal health information through this website, ordinary email or text messages.
 - Keep the English and French privacy pages and contact FAQs aligned with Sabrina's approved messaging practices.
-- Keep current availability, fees, booking policies and health-history collection in Jane.
+- Keep live availability, booking policies and health-history collection in Jane; keep the published website fees aligned with Sabrina’s approved pricing.
 - Sabrina must approve French healthcare and marketing wording before publication.
