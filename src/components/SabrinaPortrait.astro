@@ -1,0 +1,42 @@
+---
+import { headshot } from '../data/headshot';
+
+interface Props {
+  locale: 'en' | 'fr';
+}
+
+const { locale } = Astro.props;
+---
+
+{
+  headshot && (
+    <div class="portrait">
+      <img
+        src={headshot.src}
+        width={headshot.width}
+        height={headshot.height}
+        alt={locale === 'fr' ? 'Portrait de Sabrina McMorran' : 'Portrait of Sabrina McMorran'}
+        style={`object-position: ${headshot.focalPoint}`}
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  )
+}
+
+<style>
+  .portrait {
+    width: min(100%, 20rem);
+    margin-inline: auto;
+    border-radius: 10rem 10rem 1.5rem 1.5rem;
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+</style>

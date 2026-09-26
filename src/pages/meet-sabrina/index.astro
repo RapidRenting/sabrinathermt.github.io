@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingCta from '../../components/BookingCta.astro';
+import SabrinaIntro from '../../components/SabrinaIntro.astro';
 import { site } from '../../data/site';
 ---
 
@@ -11,7 +12,7 @@ import { site } from '../../data/site';
   path="/meet-sabrina/"
 >
   <header class="page-header">
-    <div class="shell content-narrow">
+    <SabrinaIntro locale="en">
       <BookingCta locale="en" />
       <p class="eyebrow">Meet your RMT</p>
       <h1>Care shaped around you</h1>
@@ -19,7 +20,7 @@ import { site } from '../../data/site';
         Sabrina McMorran is a Registered Massage Therapist who brings curiosity, clear communication
         and an individualized approach to every appointment.
       </p>
-    </div>
+    </SabrinaIntro>
   </header>
 
   <section class="section section-white">

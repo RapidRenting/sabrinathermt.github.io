@@ -7,6 +7,8 @@ const required = [
   'fr/index.html',
   'meet-sabrina/index.html',
   'fr/rencontrez-sabrina/index.html',
+  'services/index.html',
+  'fr/services/index.html',
   'faq/index.html',
   'fr/faq/index.html',
   'privacy/index.html',
