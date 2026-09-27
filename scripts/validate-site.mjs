@@ -21,6 +21,8 @@ const required = [
   'sitemap-index.xml',
   'admin/index.html',
   'admin/config.yml',
+  '404.html',
+  'apple-touch-icon.png',
 ];
 
 const files = new Map();
@@ -51,7 +53,7 @@ const knownPaths = new Set(
 for (const [path, full] of files) {
   if (extname(full) !== '.html') continue;
   const html = await readFile(full, 'utf8');
-  if (!path.startsWith('admin/') && html.includes('noindex')) {
+  if (!path.startsWith('admin/') && path !== '404.html' && html.includes('noindex')) {
     throw new Error(`Public page must be indexable: ${path}`);
   }
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {

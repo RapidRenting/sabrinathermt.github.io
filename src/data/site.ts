@@ -71,6 +71,12 @@ export const locations = [
         ['Mercredi', '8 h–16 h'],
       ],
     },
+    // Machine-readable copy of the bookable hours above, for search results.
+    // Request-only days are left out. Keep both lists aligned.
+    openingHours: [
+      { day: 'Monday', opens: '08:00', closes: '16:00' },
+      { day: 'Wednesday', opens: '08:00', closes: '16:00' },
+    ],
     notes: {
       en: 'A designated waiting area is available. Free two-hour street parking is available on Gladstone Avenue and nearby side streets.',
       fr: 'Une aire d’attente désignée est disponible. Le stationnement sur rue est gratuit pendant deux heures sur l’avenue Gladstone et les rues avoisinantes.',
@@ -128,12 +134,28 @@ export const locations = [
         ['Vendredi', 'Sur demande seulement'],
       ],
     },
+    openingHours: [
+      { day: 'Tuesday', opens: '08:00', closes: '16:00' },
+      { day: 'Thursday', opens: '12:00', closes: '20:00' },
+    ],
     notes: {
       en: 'A waiting area is available. Parking in the area can be limited, so please allow extra time before your appointment.',
       fr: 'Une aire d’attente est disponible. Le stationnement dans le secteur peut être limité; prévoyez donc un peu plus de temps avant votre rendez-vous.',
     },
   },
 ] as const;
+
+/** Published appointment fees in Canadian dollars, before tax. */
+export const appointments = [
+  { minutes: 30, fee: 100, requestOnly: true },
+  { minutes: 45, fee: 120, requestOnly: false },
+  { minutes: 60, fee: 140, requestOnly: false },
+  { minutes: 90, fee: 200, requestOnly: false },
+] as const;
+
+export function formatFee(fee: number, locale: Locale) {
+  return locale === 'en' ? `$${fee}` : `${fee}\u00a0$`;
+}
 
 export const nav = {
   en: [

@@ -16,24 +16,25 @@ const languageCode = locale === 'en' ? 'fr' : 'en';
 <a class="skip-link" href="#main">{locale === 'en' ? 'Skip to content' : 'Aller au contenu'}</a>
 <header class="site-header">
   <div class="shell header-inner">
-    <a class="brand" href={locale === 'en' ? '/' : '/fr/'} aria-label="Sabrina The RMT">
+    <a class="brand" href={locale === 'en' ? '/' : '/fr/'}>
       <img
         class="brand-mark"
-        src="/assets/sabrinathermt-mark-mulberry.png"
-        width="800"
-        height="800"
+        src="/assets/sabrinathermt-mark-mulberry-112.webp"
+        srcset="/assets/sabrinathermt-mark-mulberry-112.webp 2x, /assets/sabrinathermt-mark-mulberry-168.webp 3x"
+        width="112"
+        height="112"
         alt=""
       />
       <span class="brand-lockup">
-        <span class="brand-wordmark-crop">
-          <img
-            class="brand-wordmark"
-            src="/assets/sabrinathermt-logo-mulberry.png"
-            width="1600"
-            height="600"
-            alt="SabrinatheRMT"
-          />
-        </span>
+        <img
+          class="brand-wordmark"
+          src="/assets/sabrinathermt-wordmark-490.webp"
+          srcset="/assets/sabrinathermt-wordmark-490.webp 490w, /assets/sabrinathermt-wordmark-735.webp 735w"
+          sizes="(max-width: 370px) 135px, (max-width: 540px) clamp(165px, 43vw, 230px), 245px"
+          width="490"
+          height="83"
+          alt="Sabrina The RMT"
+        />
         <span class="brand-slogan" lang="en">Care that meets you where you are.</span>
       </span>
     </a>

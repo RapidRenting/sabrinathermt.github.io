@@ -4,7 +4,9 @@ import BookingCta from '../../components/BookingCta.astro';
 import LocationCard from '../../components/LocationCard.astro';
 import SabrinaPortrait from '../../components/SabrinaPortrait.astro';
 import { homeStructuredData } from '../../data/structuredData';
-import { locations } from '../../data/site';
+import FeeSummary from '../../components/FeeSummary.astro';
+import WeeklySchedule from '../../components/WeeklySchedule.astro';
+import { locations, site } from '../../data/site';
 ---
 
 <BaseLayout
@@ -45,16 +47,28 @@ import { locations } from '../../data/site';
           de rendez-vous, les tarifs et les politiques à jour.
         </p>
       </div>
+      <WeeklySchedule locale="fr" />
       <div class="location-grid">
         {locations.map((location) => <LocationCard locale="fr" location={location} />)}
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <FeeSummary locale="fr" />
+
+  <section class="section section-white">
     <div class="shell split">
       <div class="split-art">
-        <img src="/assets/sabrinathermt-mark-cream.png" width="800" height="800" alt="" />
+        <img
+          src="/assets/sabrinathermt-mark-cream-480.webp"
+          srcset="/assets/sabrinathermt-mark-cream-480.webp 480w, /assets/sabrinathermt-mark-cream-800.webp 800w"
+          sizes="(max-width: 860px) calc(100vw - 6rem), 360px"
+          width="800"
+          height="800"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div class="split-copy">
         <p class="eyebrow">Une approche réfléchie</p>
@@ -79,6 +93,13 @@ import { locations } from '../../data/site';
       <div>
         <h2>Prête ou prêt à réserver?</h2>
         <p>Consultez Jane pour voir les rendez-vous à jour à Gladstone et à Fourth.</p>
+        <p class="cta-contact">
+          Des questions avant de réserver? Écrivez à <a href={`mailto:${site.email}`}
+            >{site.email}</a
+          >. Pour une question urgente liée à un rendez-vous, appelez au <a href={site.phoneHref}
+            >{site.phone}</a
+          >. N’incluez aucun renseignement personnel sur la santé.
+        </p>
       </div>
       <BookingCta locale="fr" />
     </div>

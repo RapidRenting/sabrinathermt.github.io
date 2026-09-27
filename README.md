@@ -55,7 +55,7 @@ whether Google Workspace still depends on it.
 ## Services, pricing and headshot
 
 The bilingual Services & pricing pages are linked from the main navigation and footer.
-Appointment fees and service descriptions live in `src/components/ServicesPage.astro`.
+Appointment fees live in `appointments` in `src/data/site.ts` and appear on the Services & pricing pages and the home pages. Service descriptions live in `src/components/ServicesPage.astro`.
 The 30-minute option is request-only and cannot be booked online; keep that exception
 aligned with the booking FAQ when editing appointment options.
 
@@ -70,7 +70,7 @@ cream text for contrast.
 
 ## FAQ editing
 
-The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `/admin/` uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.
+The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `https://sabrinathermt.com/admin/` (bookmark it; it is not linked from the public pages) uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.
 
 ## Deployment
 

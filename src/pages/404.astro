@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCta from '../components/BookingCta.astro';
+---
+
+<BaseLayout
+  locale="en"
+  title="Page not found"
+  description="This page could not be found on the Sabrina The RMT website."
+  path="/404/"
+  notFound
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <p class="eyebrow">Page not found</p>
+      <h1>We couldn’t find that page</h1>
+      <p class="page-lede">The page may have moved. These links can help you find your way.</p>
+      <div class="hero-actions"><BookingCta locale="en" /></div>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-narrow prose not-found">
+      <div>
+        <h2>Helpful links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services &amp; pricing</a></li>
+          <li><a href="/#locations">Locations</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div lang="fr-CA">
+        <h2>Page introuvable</h2>
+        <p>Cette page a peut-être été déplacée. Ces liens peuvent vous aider.</p>
+        <ul>
+          <li><a href="/fr/">Accueil</a></li>
+          <li><a href="/fr/services/">Services et tarifs</a></li>
+          <li><a href="/fr/#locations">Lieux</a></li>
+          <li><a href="/fr/faq/">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

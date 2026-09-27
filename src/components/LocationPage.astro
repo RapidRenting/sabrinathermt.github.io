@@ -45,7 +45,13 @@ const directionsLabel = locale === 'en' ? 'Get directions' : 'Itinéraire';
 
   <section class="section section-white">
     <div class="shell location-grid">
-      <LocationCard locale={locale} location={location} showDetailsLink={false} eagerPhoto />
+      <LocationCard
+        locale={locale}
+        location={location}
+        showDetailsLink={false}
+        eagerPhoto
+        headingLevel={2}
+      />
     </div>
   </section>
 

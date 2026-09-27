@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookingCta from './BookingCta.astro';
-import { site, type Locale } from '../data/site';
+import { appointments, formatFee, site, type Locale } from '../data/site';
 
 interface Props {
   locale: Locale;
@@ -68,12 +68,6 @@ const copy = {
       'Veuillez ne pas inclure de renseignements personnels sur votre santé dans votre courriel.',
   },
 }[locale];
-const appointments = [
-  { minutes: 30, fee: 100 },
-  { minutes: 45, fee: 120 },
-  { minutes: 60, fee: 140 },
-  { minutes: 90, fee: 200 },
-];
 ---
 
 <BaseLayout locale={locale} title={copy.title} description={copy.description} path={copy.path}>
@@ -111,11 +105,10 @@ const appointments = [
                     {appointment.minutes} {copy.minutes}
                   </th>
                   <td class="price">
-                    {locale === 'en' ? `$${appointment.fee}` : `${appointment.fee} $`}{' '}
-                    <span>{copy.tax}</span>
+                    {formatFee(appointment.fee, locale)} <span>{copy.tax}</span>
                   </td>
                   <td>
-                    {appointment.minutes === 30 ? (
+                    {appointment.requestOnly ? (
                       <a href="#request-30">{copy.request}</a>
                     ) : (
                       <a href={site.booking.main} rel="external">

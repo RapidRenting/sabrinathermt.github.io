@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingCta from '../../components/BookingCta.astro';
+import FaqAnswer from '../../components/FaqAnswer.astro';
 import faqData from '../../data/faqs.json';
 ---
 
@@ -12,12 +13,12 @@ import faqData from '../../data/faqs.json';
 >
   <header class="page-header">
     <div class="shell content-narrow">
-      <BookingCta locale="en" />
       <p class="eyebrow">Helpful details</p>
       <h1>Frequently asked questions</h1>
       <p class="page-lede">
         A few practical details to help you feel prepared before your appointment.
       </p>
+      <div class="hero-actions"><BookingCta locale="en" /></div>
     </div>
   </header>
 
@@ -28,7 +29,7 @@ import faqData from '../../data/faqs.json';
           <details>
             <>
               <summary>{faq.en.question}</summary>
-              <p>{faq.en.answer}</p>
+              <FaqAnswer locale="en" text={faq.en.answer} />
             </>
           </details>
         ))

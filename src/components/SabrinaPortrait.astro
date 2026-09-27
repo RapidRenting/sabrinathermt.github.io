@@ -7,6 +7,17 @@ interface Props {
 }
 
 const { locale, variant = 'profile' } = Astro.props;
+function portraitSrcset(image: NonNullable<typeof headshot>) {
+  return [
+    ...(image.smallerWidths ?? []).map(
+      (width) => `${image.src.replace(/\.webp$/, `-${width}.webp`)} ${width}w`,
+    ),
+    `${image.src} ${image.width}w`,
+  ].join(', ');
+}
+const srcset = headshot ? portraitSrcset(headshot) : undefined;
+const sizes =
+  variant === 'hero' ? '(max-width: 860px) min(calc(100vw - 1.2rem), 460px), 520px' : '20rem';
 ---
 
 {
@@ -14,6 +25,8 @@ const { locale, variant = 'profile' } = Astro.props;
     <div class:list={['portrait', { 'portrait-hero': variant === 'hero' }]}>
       <img
         src={headshot.src}
+        srcset={srcset}
+        sizes={sizes}
         width={headshot.width}
         height={headshot.height}
         alt={locale === 'fr' ? 'Portrait de Sabrina McMorran' : 'Portrait of Sabrina McMorran'}
