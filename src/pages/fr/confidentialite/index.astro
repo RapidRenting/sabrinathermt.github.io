@@ -54,12 +54,13 @@ import { site } from '../../../data/site';
 
       <h2>Courriel et téléphone</h2>
       <p>
-        Vous pouvez appeler au <a href={site.phoneHref}>{site.phone}</a> pour une question urgente liée
-        à un rendez-vous, par exemple si vous êtes en retard ou devez l’annuler. Pour les questions générales
-        sur les réservations, les demandes de rendez-vous ou les autres questions non urgentes, veuillez
-        écrire à <a href={`mailto:${site.email}`}>{site.email}</a>. Le courriel ordinaire et la
-        messagerie vocale ne sont pas destinés aux renseignements personnels sur la santé; n’incluez
-        donc aucun détail sur votre santé dans un message.
+        Le courriel est le moyen privilégié pour joindre Sabrina, notamment pour les questions
+        générales sur les réservations, les reports, les demandes de rendez-vous et les autres
+        questions non urgentes : <a href={`mailto:${site.email}`}>{site.email}</a>. Prévoyez un
+        délai de réponse de 1 à 2 jours ouvrables. Si vous êtes en retard pour un rendez-vous, vous
+        pouvez appeler ou envoyer un texto au <a href={site.phoneHref}>{site.phone}</a>. Le courriel
+        ordinaire, les textos et la messagerie vocale ne sont pas destinés aux renseignements
+        personnels sur la santé; n’incluez donc aucun détail sur votre santé dans un message.
       </p>
 
       <h2>Consentement aux textos et confidentialité</h2>
@@ -137,7 +138,7 @@ import { site } from '../../../data/site';
           href={`mailto:${site.email}`}>{site.email}</a
         > sans inclure de renseignements personnels sur la santé dans un courriel ou un message vocal.
       </p>
-      <p><em>Dernière mise à jour : 25 septembre 2026.</em></p>
+      <p><em>Dernière mise à jour : 27 septembre 2026.</em></p>
     </div>
   </section>
 </BaseLayout>

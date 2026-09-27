@@ -81,6 +81,10 @@ export const locations = [
       en: 'A designated waiting area is available. Free two-hour street parking is available on Gladstone Avenue and nearby side streets.',
       fr: 'Une aire d’attente désignée est disponible. Le stationnement sur rue est gratuit pendant deux heures sur l’avenue Gladstone et les rues avoisinantes.',
     },
+    access: {
+      en: 'Steps up to the porch entrance; no step-free access. The client washroom is not accessible.',
+      fr: 'Marches jusqu’au porche d’entrée; aucun accès sans marches. Les toilettes ne sont pas accessibles.',
+    },
   },
   {
     id: 'fourth',
@@ -141,6 +145,10 @@ export const locations = [
     notes: {
       en: 'A waiting area is available. Parking in the area can be limited, so please allow extra time before your appointment.',
       fr: 'Une aire d’attente est disponible. Le stationnement dans le secteur peut être limité; prévoyez donc un peu plus de temps avant votre rendez-vous.',
+    },
+    access: {
+      en: 'Second floor, stairs only (no elevator). The client washroom is not accessible.',
+      fr: 'Deuxième étage, accès par l’escalier seulement (aucun ascenseur). Les toilettes ne sont pas accessibles.',
     },
   },
 ] as const;
