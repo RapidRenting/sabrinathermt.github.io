@@ -23,6 +23,17 @@
       }
     },
     {
+      "id": "prepare",
+      "en": {
+        "question": "How should I prepare for my appointment?",
+        "answer": "Wear whatever is comfortable for you. You’re welcome to wear shorts during treatment, and Sabrina uses draping so you stay covered at all times. Many techniques work best directly on the skin, but treatment can also be done over clothing or over the sheet if you prefer. If you’re coming in with an injury, Sabrina will do an assessment, so wear comfortable clothing you can move in. Depending on your needs, she may also suggest remedial exercises. Please bring water. Before your first appointment, complete your health history in Jane; otherwise it will need to be done during your appointment, which takes time away from treatment. There’s no need to arrive early. Sabrina keeps the space as scent-free as possible, so please wear little or no scented products."
+      },
+      "fr": {
+        "question": "Comment me préparer à mon rendez-vous?",
+        "answer": "Portez ce qui vous met à l’aise. Vous pouvez porter un short pendant le traitement, et Sabrina utilise des draps pour vous couvrir en tout temps. Plusieurs techniques sont plus efficaces directement sur la peau, mais le traitement peut aussi se faire par-dessus les vêtements ou le drap, si vous le préférez. Si vous consultez pour une blessure, Sabrina fera une évaluation; portez donc des vêtements confortables qui vous permettent de bouger. Selon vos besoins, elle pourrait aussi vous proposer des exercices thérapeutiques. Apportez de l’eau. Avant votre premier rendez-vous, remplissez le formulaire d’antécédents de santé dans Jane; sinon, il faudra le remplir pendant le rendez-vous, ce qui réduira le temps de traitement. Inutile d’arriver en avance. Sabrina garde l’espace aussi exempt de parfums que possible; veuillez donc porter peu ou pas de produits parfumés."
+      }
+    },
+    {
       "id": "tmj-treatment",
       "en": {
         "question": "Does Sabrina offer TMJ treatment?",
@@ -56,6 +67,17 @@
       }
     },
     {
+      "id": "accessibility",
+      "en": {
+        "question": "Are the locations accessible?",
+        "answer": "Neither location currently has step-free access. At Gladstone, there are steps up to the porch entrance and no step-free way in. At Fourth, the clinic is on the second floor of The Movement Co. and is reached by stairs only; there is no elevator. Both locations have a washroom available for clients, but neither washroom is accessible. If you have questions about access before booking, email massage@sabrinathermt.com."
+      },
+      "fr": {
+        "question": "Les lieux sont-ils accessibles?",
+        "answer": "Aucun des deux lieux n’offre actuellement d’accès sans marches. À Gladstone, des marches mènent au porche d’entrée, et il n’y a pas d’entrée sans marches. À Fourth, la clinique se trouve au deuxième étage de The Movement Co. et on y accède uniquement par l’escalier; il n’y a pas d’ascenseur. Les deux lieux ont des toilettes à la disposition des clients, mais elles ne sont pas accessibles. Si vous avez des questions sur l’accès avant de réserver, écrivez à massage@sabrinathermt.com."
+      }
+    },
+    {
       "id": "booking",
       "en": {
         "question": "How do I book or change an appointment?",
@@ -67,14 +89,36 @@
       }
     },
     {
+      "id": "cancellation",
+      "en": {
+        "question": "What is the cancellation policy?",
+        "answer": "Please give at least 48 hours’ notice to cancel or reschedule an appointment. Cancellations made with less than 48 hours’ notice and missed appointments are charged the full appointment fee. You can cancel online through Jane. To reschedule, or if you need help rebooking, email massage@sabrinathermt.com. Email is the preferred way to reach Sabrina; please allow 1 to 2 business days for a reply. If you are running late, call or text 613-801-6160."
+      },
+      "fr": {
+        "question": "Quelle est la politique d’annulation?",
+        "answer": "Veuillez donner un préavis d’au moins 48 heures pour annuler ou reporter un rendez-vous. Les annulations faites moins de 48 heures à l’avance et les rendez-vous manqués sont facturés au plein tarif du rendez-vous. Vous pouvez annuler en ligne dans Jane. Pour reporter un rendez-vous ou obtenir de l’aide pour en prendre un nouveau, écrivez à massage@sabrinathermt.com. Le courriel est le moyen privilégié pour joindre Sabrina; prévoyez un délai de réponse de 1 à 2 jours ouvrables. Si vous êtes en retard, appelez ou envoyez un texto au 613-801-6160."
+      }
+    },
+    {
+      "id": "insurance",
+      "en": {
+        "question": "Do you provide insurance receipts or direct billing?",
+        "answer": "Sabrina does not direct bill insurance. Jane automatically emails you a receipt that you can submit to your insurance provider, and a printed receipt is available on request. Massage therapy coverage varies by plan, so please check with your insurance provider about your coverage and whether a doctor’s referral is required."
+      },
+      "fr": {
+        "question": "Offrez-vous des reçus d’assurance ou la facturation directe?",
+        "answer": "Sabrina n’offre pas la facturation directe aux assureurs. Jane vous envoie automatiquement un reçu par courriel, que vous pouvez soumettre à votre assureur, et un reçu imprimé est offert sur demande. La couverture en massothérapie varie selon les régimes; vérifiez auprès de votre assureur ce que votre régime couvre et si une recommandation d’un médecin est exigée."
+      }
+    },
+    {
       "id": "contact",
       "en": {
         "question": "How can I contact Sabrina?",
-        "answer": "For general booking questions, appointment requests or other non-urgent matters, email massage@sabrinathermt.com. Call 613-801-6160 about a time-sensitive appointment matter, such as running late or cancelling an appointment. Please do not include personal health information in email or voicemail. Use Jane to book or manage standard appointments and to enter health-history information."
+        "answer": "Email is the preferred way to reach Sabrina, including for booking questions, rescheduling and appointment requests: massage@sabrinathermt.com. Please allow 1 to 2 business days for a reply. If you are running late for an appointment, call or text 613-801-6160. Please do not include personal health information in email, text messages or voicemail. Use Jane to book, cancel or manage standard appointments and to enter health-history information."
       },
       "fr": {
         "question": "Comment puis-je communiquer avec Sabrina?",
-        "answer": "Pour les questions générales sur les réservations, les demandes de rendez-vous ou les autres questions non urgentes, écrivez à massage@sabrinathermt.com. Appelez au 613-801-6160 pour une question urgente liée à un rendez-vous, par exemple si vous êtes en retard ou devez l’annuler. N’incluez aucun renseignement personnel sur la santé dans un courriel ou un message vocal. Utilisez Jane pour prendre ou gérer les rendez-vous réguliers et transmettre vos antécédents de santé."
+        "answer": "Le courriel est le moyen privilégié pour joindre Sabrina, notamment pour les questions de réservation, les reports et les demandes de rendez-vous : massage@sabrinathermt.com. Prévoyez un délai de réponse de 1 à 2 jours ouvrables. Si vous êtes en retard pour un rendez-vous, appelez ou envoyez un texto au 613-801-6160. N’incluez aucun renseignement personnel sur la santé dans un courriel, un texto ou un message vocal. Utilisez Jane pour prendre, annuler ou gérer les rendez-vous réguliers et transmettre vos antécédents de santé."
       }
     }
   ]

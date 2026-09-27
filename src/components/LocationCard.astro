@@ -46,6 +46,10 @@ const address = locale === 'en' ? location.address : location.addressFr;
       }
     </dl>
     <p class="location-note">{location.notes[locale]}</p>
+    <p class="location-note">
+      <strong>{locale === 'en' ? 'Access:' : 'Accès\u00a0:'}</strong>{' '}
+      {location.access[locale]}
+    </p>
     <div class="location-actions">
       <BookingCta
         locale={locale}

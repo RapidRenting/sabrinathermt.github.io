@@ -50,12 +50,13 @@ import { site } from '../../data/site';
 
       <h2>Email and telephone</h2>
       <p>
-        You may call <a href={site.phoneHref}>{site.phone}</a> about a time-sensitive appointment matter,
-        such as running late or cancelling an appointment. For general booking questions, appointment
-        requests or other non-urgent matters, please email <a href={`mailto:${site.email}`}
-          >{site.email}</a
-        >. Ordinary email and voicemail are not intended for personal health information, so please
-        do not include health details in a message.
+        Email is the preferred way to reach Sabrina, including for general booking questions,
+        rescheduling, appointment requests and other non-urgent matters: <a
+          href={`mailto:${site.email}`}>{site.email}</a
+        >. Please allow 1 to 2 business days for a reply. If you are running late for an
+        appointment, you may call or text <a href={site.phoneHref}>{site.phone}</a>. Ordinary email,
+        text messages and voicemail are not intended for personal health information, so please do
+        not include health details in a message.
       </p>
 
       <h2>Text messaging consent and privacy</h2>
@@ -125,7 +126,7 @@ import { site } from '../../data/site';
         > or email <a href={`mailto:${site.email}`}>{site.email}</a> without including personal health
         information in email or voicemail.
       </p>
-      <p><em>Last updated: September 25, 2026.</em></p>
+      <p><em>Last updated: September 27, 2026.</em></p>
     </div>
   </section>
 </BaseLayout>
