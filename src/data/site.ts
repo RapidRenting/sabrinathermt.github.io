@@ -11,6 +11,7 @@ export const site = {
     main: 'https://sabrinathermt.janeapp.com/',
     gladstone: 'https://sabrinathermt.janeapp.com/locations/centretown-481-gladstone-ave/book',
     fourth: 'https://sabrinathermt.janeapp.com/locations/glebe-101-fourth-avenue/book',
+    giftCards: 'https://sabrinathermt.janeapp.com/online_gift_cards/new',
   },
 } as const;
 

@@ -36,6 +36,9 @@ const copy = {
     requestIntro:
       '30-minute appointments are available upon request. Contact Sabrina to request one:',
     privacy: 'Please do not include personal health information in email.',
+    giftHeading: 'Gift cards',
+    gift: 'Gift cards are available for up to $500. Buy one online through Jane, email {email}, or ask in person. To buy online, you’ll sign in to Jane or create an account.',
+    giftButton: 'Buy a gift card',
   },
   fr: {
     title: 'Services et tarifs',
@@ -66,6 +69,9 @@ const copy = {
       'Les rendez-vous de 30 minutes sont offerts sur demande. Communiquez avec Sabrina pour en demander un :',
     privacy:
       'Veuillez ne pas inclure de renseignements personnels sur votre santé dans votre courriel.',
+    giftHeading: 'Cartes-cadeaux',
+    gift: 'Des cartes-cadeaux sont offertes pour un montant maximal de 500 $. Achetez-en une en ligne dans Jane, écrivez à {email} ou informez-vous en personne. Pour acheter en ligne, vous devrez vous connecter à Jane ou créer un compte.',
+    giftButton: 'Acheter une carte-cadeau',
   },
 }[locale];
 ---
@@ -131,7 +137,21 @@ const copy = {
         </p>
         <p>{copy.privacy}</p>
       </div>
-      <div class="cta-actions"><BookingCta locale={locale} /></div>
+      <h2 id="gift-cards">{copy.giftHeading}</h2>
+      <p>
+        {copy.gift.split('{email}')[0]}<a href={`mailto:${site.email}`}>{site.email}</a>{
+          copy.gift.split('{email}')[1]
+        }
+      </p>
+      <div class="cta-actions">
+        <BookingCta locale={locale} />
+        <BookingCta
+          locale={locale}
+          variant="secondary"
+          href={site.booking.giftCards}
+          label={copy.giftButton}
+        />
+      </div>
     </div>
   </section>
 </BaseLayout>

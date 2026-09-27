@@ -155,6 +155,17 @@
       }
     },
     {
+      "id": "gift-cards",
+      "en": {
+        "question": "Do you offer gift cards or gift certificates?",
+        "answer": "Yes. Gift cards are available for up to $500. You can buy one online on Jane’s gift card page (you’ll need to sign in or create a Jane account), by email at massage@sabrinathermt.com, or in person."
+      },
+      "fr": {
+        "question": "Offrez-vous des cartes-cadeaux ou des chèques-cadeaux?",
+        "answer": "Oui. Des cartes-cadeaux sont offertes pour un montant maximal de 500 $. Vous pouvez en acheter une en ligne sur la page des cartes-cadeaux de Jane (vous devrez vous connecter ou créer un compte Jane), par courriel à massage@sabrinathermt.com ou en personne."
+      }
+    },
+    {
       "id": "insurance",
       "en": {
         "question": "Do you provide insurance receipts or direct billing?",

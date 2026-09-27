@@ -48,6 +48,11 @@ const { locale } = Astro.props;
           >
         </li>
         <li>
+          <a href={locale === 'en' ? '/services/#gift-cards' : '/fr/services/#gift-cards'}
+            >{locale === 'en' ? 'Gift cards' : 'Cartes-cadeaux'}</a
+          >
+        </li>
+        <li>
           <a
             href={locale === 'en'
               ? '/locations/centretown-gladstone/'

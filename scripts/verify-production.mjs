@@ -28,6 +28,7 @@ const bookingUrls = [
   'https://sabrinathermt.janeapp.com/',
   'https://sabrinathermt.janeapp.com/locations/centretown-481-gladstone-ave/book',
   'https://sabrinathermt.janeapp.com/locations/glebe-101-fourth-avenue/book',
+  'https://sabrinathermt.janeapp.com/online_gift_cards/new',
 ];
 
 function normalize(values) {
