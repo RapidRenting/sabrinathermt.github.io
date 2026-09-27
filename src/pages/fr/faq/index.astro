@@ -3,13 +3,15 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BookingCta from '../../../components/BookingCta.astro';
 import FaqAnswer from '../../../components/FaqAnswer.astro';
 import faqData from '../../../data/faqs.json';
+import { faqStructuredData } from '../../../data/structuredData';
 ---
 
 <BaseLayout
   locale="fr"
   title="Foire aux questions"
-  description="Réponses sur la réservation, le premier rendez-vous, les lieux à Ottawa, les heures, le stationnement et les coordonnées de Sabrina The RMT."
+  description="Réponses sur la réservation, les annulations, le paiement, les reçus d’assurance, les cartes-cadeaux, l’accessibilité et le premier rendez-vous à Ottawa."
   path="/fr/faq/"
+  structuredData={faqStructuredData('fr')}
 >
   <header class="page-header">
     <div class="shell content-narrow">
