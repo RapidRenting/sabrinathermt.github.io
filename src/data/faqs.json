@@ -12,6 +12,28 @@
       }
     },
     {
+      "id": "referral",
+      "en": {
+        "question": "Do I need a doctor’s referral?",
+        "answer": "No. You don’t need a referral to see Sabrina. Some insurance plans require one for reimbursement, so please check with your insurance provider."
+      },
+      "fr": {
+        "question": "Ai-je besoin d’une recommandation d’un médecin?",
+        "answer": "Non. Vous n’avez pas besoin d’une recommandation pour consulter Sabrina. Certains régimes d’assurance en exigent une pour le remboursement; vérifiez auprès de votre assureur."
+      }
+    },
+    {
+      "id": "minors",
+      "en": {
+        "question": "Does Sabrina treat minors?",
+        "answer": "Yes. Clients 16 and older can attend on their own, as long as they understand the proposed treatment and can give informed consent. Clients under 16 should come to their appointment with a parent or guardian."
+      },
+      "fr": {
+        "question": "Sabrina traite-t-elle les mineurs?",
+        "answer": "Oui. Les clients de 16 ans et plus peuvent venir seuls, pourvu qu’ils comprennent le traitement proposé et puissent donner un consentement éclairé. Les clients de moins de 16 ans devraient être accompagnés d’un parent ou d’un tuteur à leur rendez-vous."
+      }
+    },
+    {
       "id": "what-to-expect",
       "en": {
         "question": "What happens during an initial appointment?",
@@ -31,6 +53,28 @@
       "fr": {
         "question": "Comment me préparer à mon rendez-vous?",
         "answer": "Portez ce qui vous met à l’aise. Vous pouvez porter un short pendant le traitement, et Sabrina utilise des draps pour vous couvrir en tout temps. Plusieurs techniques sont plus efficaces directement sur la peau, mais le traitement peut aussi se faire par-dessus les vêtements ou le drap, si vous le préférez. Si vous consultez pour une blessure, Sabrina fera une évaluation; portez donc des vêtements confortables qui vous permettent de bouger. Selon vos besoins, elle pourrait aussi vous proposer des exercices thérapeutiques. Apportez de l’eau. Avant votre premier rendez-vous, remplissez le formulaire d’antécédents de santé dans Jane; sinon, il faudra le remplir pendant le rendez-vous, ce qui réduira le temps de traitement. Inutile d’arriver en avance. Sabrina garde l’espace aussi exempt de parfums que possible; veuillez donc porter peu ou pas de produits parfumés."
+      }
+    },
+    {
+      "id": "treatment-preferences",
+      "en": {
+        "question": "Can I choose what’s treated or change the pressure?",
+        "answer": "Yes. You’re in control of your treatment. Let Sabrina know which areas you’d like her to focus on or avoid, and speak up at any time if you’d like the pressure changed. You can also ask her to modify or stop treatment at any point."
+      },
+      "fr": {
+        "question": "Puis-je choisir les zones traitées ou faire modifier la pression?",
+        "answer": "Oui. Vous gardez le contrôle de votre traitement. Indiquez à Sabrina les zones sur lesquelles vous aimeriez qu’elle se concentre ou qu’elle évite, et n’hésitez pas à lui demander en tout temps d’ajuster la pression. Vous pouvez aussi lui demander de modifier ou d’arrêter le traitement à tout moment."
+      }
+    },
+    {
+      "id": "pregnancy",
+      "en": {
+        "question": "Do you offer pregnancy massage?",
+        "answer": "Yes. Sabrina offers pregnancy massage with you lying on your side, supported by pillows. If you’re pregnant, please let her know through Jane, in your appointment note or your health history form."
+      },
+      "fr": {
+        "question": "Offrez-vous la massothérapie pendant la grossesse?",
+        "answer": "Oui. Sabrina offre des massages pendant la grossesse, en position couchée sur le côté, avec le soutien d’oreillers. Si vous êtes enceinte, veuillez l’indiquer à Sabrina dans Jane, dans la note de votre rendez-vous ou dans votre formulaire d’antécédents de santé."
       }
     },
     {
@@ -97,6 +141,17 @@
       "fr": {
         "question": "Quelle est la politique d’annulation?",
         "answer": "Veuillez donner un préavis d’au moins 48 heures pour annuler ou reporter un rendez-vous. Les annulations faites moins de 48 heures à l’avance et les rendez-vous manqués sont facturés au plein tarif du rendez-vous. Vous pouvez annuler en ligne dans Jane. Pour reporter un rendez-vous ou obtenir de l’aide pour en prendre un nouveau, écrivez à massage@sabrinathermt.com. Le courriel est le moyen privilégié pour joindre Sabrina; prévoyez un délai de réponse de 1 à 2 jours ouvrables. Si vous êtes en retard, appelez ou envoyez un texto au 613-801-6160."
+      }
+    },
+    {
+      "id": "payment",
+      "en": {
+        "question": "What payment methods do you accept?",
+        "answer": "In person, Sabrina accepts cash, debit and credit cards (except American Express). Online through Jane, you can pay by credit card, including American Express; debit and cash aren’t available online. American Express is accepted only through Jane, so add the card to your Jane profile to use it."
+      },
+      "fr": {
+        "question": "Quels modes de paiement acceptez-vous?",
+        "answer": "En personne, Sabrina accepte l’argent comptant, la carte de débit et les cartes de crédit (sauf American Express). En ligne, dans Jane, vous pouvez payer par carte de crédit, y compris American Express; le débit et l’argent comptant ne sont pas acceptés en ligne. American Express est acceptée uniquement dans Jane : ajoutez la carte à votre profil Jane pour l’utiliser."
       }
     },
     {
