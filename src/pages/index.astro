@@ -4,7 +4,9 @@ import BookingCta from '../components/BookingCta.astro';
 import LocationCard from '../components/LocationCard.astro';
 import SabrinaPortrait from '../components/SabrinaPortrait.astro';
 import { homeStructuredData } from '../data/structuredData';
-import { locations } from '../data/site';
+import FeeSummary from '../components/FeeSummary.astro';
+import WeeklySchedule from '../components/WeeklySchedule.astro';
+import { locations, site } from '../data/site';
 ---
 
 <BaseLayout
@@ -45,13 +47,16 @@ import { locations } from '../data/site';
           options, fees and policies.
         </p>
       </div>
+      <WeeklySchedule locale="en" />
       <div class="location-grid">
         {locations.map((location) => <LocationCard locale="en" location={location} />)}
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <FeeSummary locale="en" />
+
+  <section class="section section-white">
     <div class="shell split">
       <div class="split-art">
         <img
@@ -87,6 +92,11 @@ import { locations } from '../data/site';
       <div>
         <h2>Ready to book?</h2>
         <p>Use Jane to view current appointments at Gladstone and Fourth.</p>
+        <p class="cta-contact">
+          Questions before booking? Email <a href={`mailto:${site.email}`}>{site.email}</a>. For a
+          time-sensitive appointment matter, call <a href={site.phoneHref}>{site.phone}</a>. Please
+          do not include personal health information.
+        </p>
       </div>
       <BookingCta locale="en" />
     </div>

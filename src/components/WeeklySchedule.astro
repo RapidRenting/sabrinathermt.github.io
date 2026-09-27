@@ -1,0 +1,127 @@
+---
+import { locations, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const weekdays = {
+  en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  fr: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+}[locale];
+const copy = {
+  en: {
+    caption: 'Weekly schedule',
+    day: 'Day',
+    location: 'Location',
+    hours: 'Hours',
+    note: 'Jane shows live availability.',
+  },
+  fr: {
+    caption: 'Horaire de la semaine',
+    day: 'Jour',
+    location: 'Lieu',
+    hours: 'Heures',
+    note: 'Jane affiche les disponibilités en temps réel.',
+  },
+}[locale];
+
+// Built from each location's bookable hours so the two never disagree.
+const rows = locations
+  .flatMap((location) => location.hours[locale].map(([day, time]) => ({ day, time, location })))
+  .sort((a, b) => weekdays.indexOf(a.day) - weekdays.indexOf(b.day));
+---
+
+<div class="schedule">
+  <div class="schedule-wrap">
+    <table class="schedule-table">
+      <caption>{copy.caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{copy.day}</th>
+          <th scope="col">{copy.location}</th>
+          <th scope="col">{copy.hours}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map(({ day, time, location }) => (
+            <tr>
+              <th scope="row">{day}</th>
+              <td>
+                <a href={`#${location.id}`}>{location.name[locale]}</a>
+              </td>
+              <td>{time}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="schedule-note">{copy.note}</p>
+</div>
+
+<style>
+  .schedule {
+    margin-bottom: 2.5rem;
+  }
+
+  .schedule-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(91, 58, 93, 0.18);
+    border-radius: 1rem;
+    background: var(--cream);
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  caption {
+    padding: 1rem 1.1rem 0.4rem;
+    color: var(--mulberry);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.35rem;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 0.7rem 1.1rem;
+  }
+
+  thead th {
+    color: var(--slate);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  tbody tr {
+    border-top: 1px solid var(--cream-deep);
+  }
+
+  tbody th {
+    font-weight: 750;
+  }
+
+  td a {
+    font-weight: 700;
+  }
+
+  .schedule-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 540px) {
+    th,
+    td {
+      padding: 0.6rem 0.7rem;
+      font-size: 0.95rem;
+    }
+  }
+</style>

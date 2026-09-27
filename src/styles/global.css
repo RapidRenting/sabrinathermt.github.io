@@ -528,6 +528,19 @@ address {
   margin-bottom: 0;
 }
 
+.cta-band .cta-contact {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.cta-band a:not(.button) {
+  color: var(--cream);
+}
+
+.cta-band :focus-visible {
+  outline-color: var(--cream);
+}
+
 .cta-band .button {
   border-color: var(--cream);
   color: var(--mulberry);

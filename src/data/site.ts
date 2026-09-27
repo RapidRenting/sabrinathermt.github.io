@@ -145,6 +145,18 @@ export const locations = [
   },
 ] as const;
 
+/** Published appointment fees in Canadian dollars, before tax. */
+export const appointments = [
+  { minutes: 30, fee: 100, requestOnly: true },
+  { minutes: 45, fee: 120, requestOnly: false },
+  { minutes: 60, fee: 140, requestOnly: false },
+  { minutes: 90, fee: 200, requestOnly: false },
+] as const;
+
+export function formatFee(fee: number, locale: Locale) {
+  return locale === 'en' ? `$${fee}` : `${fee}\u00a0$`;
+}
+
 export const nav = {
   en: [
     { href: '/', label: 'Home' },
