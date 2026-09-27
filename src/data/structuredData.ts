@@ -1,3 +1,4 @@
+import faqData from './faqs.json';
 import { locations, site, type Locale } from './site';
 
 type Location = (typeof locations)[number];
@@ -119,5 +120,21 @@ export function locationStructuredData(location: Location, locale: Locale) {
       person(),
       locationBusiness(location, locale),
     ],
+  };
+}
+
+export function faqStructuredData(locale: Locale) {
+  const path = locale === 'en' ? '/faq/' : '/fr/faq/';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${absolute(path)}#faq`,
+    url: absolute(path),
+    inLanguage: locale === 'en' ? 'en-CA' : 'fr-CA',
+    mainEntity: faqData.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq[locale].question,
+      acceptedAnswer: { '@type': 'Answer', text: faq[locale].answer },
+    })),
   };
 }
