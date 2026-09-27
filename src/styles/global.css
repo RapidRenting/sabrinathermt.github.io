@@ -882,9 +882,25 @@ address {
     column-gap: 0.8rem;
     font-size: 0.9rem;
   }
+
   .hero,
   .page-header {
     padding-top: 1.5rem;
+  }
+
+  /* Keeps the booking button on the first screen of 320 × 568 phones. */
+  .hero-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .hero-lede {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    margin-top: 1.1rem;
   }
 }
 
