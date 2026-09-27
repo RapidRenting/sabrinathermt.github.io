@@ -70,7 +70,7 @@ cream text for contrast.
 
 ## FAQ editing
 
-The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `/admin/` uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.
+The FAQ content lives in `src/data/faqs.json`. Every entry requires a stable ID and complete English and French text. The editor at `https://sabrinathermt.com/admin/` (bookmark it; it is not linked from the public pages) uses Decap CMS editorial workflow, so changes are reviewed through a pull request before they can reach the live site.
 
 ## Deployment
 

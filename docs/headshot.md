@@ -28,6 +28,11 @@ To replace the portrait:
    rounded shape and offset outline, with a square crop. The current portrait is
    aligned to the top to preserve space above Sabrina's hair.
 
+   Phones download a smaller copy. Save 480- and 720-pixel-wide versions beside
+   the main file as `sabrina-headshot-480.webp` and `sabrina-headshot-720.webp`
+   and list them in `smallerWidths: [480, 720]`, or omit `smallerWidths` to serve
+   only the main file.
+
 3. The shared component supplies concise, localized alt text: “Portrait of
    Sabrina McMorran” / “Portrait de Sabrina McMorran”. Update this text only if the
    approved image needs a different description.

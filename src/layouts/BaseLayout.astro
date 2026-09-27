@@ -13,19 +13,24 @@ interface Props {
   image?: string;
   imageAlt?: string;
   structuredData?: Record<string, unknown>;
+  /** Error pages are kept out of search results and have no language pair. */
+  notFound?: boolean;
 }
+
+const defaultImage = '/assets/sabrinathermt-social.png';
 
 const {
   locale,
   title,
   description,
   path,
-  image = '/assets/sabrinathermt-logo-mulberry.png',
+  image = defaultImage,
   imageAlt = 'Sabrina The RMT',
   structuredData,
+  notFound = false,
 } = Astro.props;
 const canonical = new URL(path, site.origin).href;
-const alternatePath = routePairs[path];
+const alternatePath = notFound ? (locale === 'en' ? '/fr/' : '/') : routePairs[path];
 if (!alternatePath) throw new Error(`Missing language equivalent for ${path}`);
 const alternate = new URL(alternatePath, site.origin).href;
 const englishPath = locale === 'en' ? path : alternatePath;
@@ -39,20 +44,41 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#5b3a5d" />
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={locale === 'en' ? 'fr-CA' : 'en-CA'} href={alternate} />
-    <link rel="alternate" hreflang={locale === 'en' ? 'en-CA' : 'fr-CA'} href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={new URL(englishPath, site.origin).href} />
+    {
+      notFound ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <>
+          <meta name="robots" content="index, follow, max-image-preview:large" />
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang={locale === 'en' ? 'fr-CA' : 'en-CA'} href={alternate} />
+          <link rel="alternate" hreflang={locale === 'en' ? 'en-CA' : 'fr-CA'} href={canonical} />
+          <link
+            rel="alternate"
+            hreflang="x-default"
+            href={new URL(englishPath, site.origin).href}
+          />
+        </>
+      )
+    }
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>{pageTitle}</title>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content={locale === 'en' ? 'en_CA' : 'fr_CA'} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {!notFound && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={new URL(image, site.origin).href} />
+    {
+      image === defaultImage && (
+        <>
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </>
+      )
+    }
     <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     {

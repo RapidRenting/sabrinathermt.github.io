@@ -9,19 +9,30 @@ interface Props {
   location: (typeof locations)[number];
   showDetailsLink?: boolean;
   eagerPhoto?: boolean;
+  headingLevel?: 2 | 3;
 }
 
-const { locale, location, showDetailsLink = true, eagerPhoto = false } = Astro.props;
+const {
+  locale,
+  location,
+  showDetailsLink = true,
+  eagerPhoto = false,
+  headingLevel = 3,
+} = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
+const Subheading = `h${headingLevel + 1}` as 'h3' | 'h4';
 const address = locale === 'en' ? location.address : location.addressFr;
 ---
 
 <article class="location-card" id={location.id}>
   <div class="location-copy">
     <p class="eyebrow">{locale === 'en' ? 'Ottawa location' : 'Lieu à Ottawa'}</p>
-    <h3>{location.name[locale]}</h3>
+    <Heading class="location-name">{location.name[locale]}</Heading>
     {'venue' in location && <p class="venue">{location.venue}</p>}
     <address>{address}</address>
-    <h4>{locale === 'en' ? 'Bookable hours' : 'Heures de rendez-vous'}</h4>
+    <Subheading class="location-subheading">
+      {locale === 'en' ? 'Bookable hours' : 'Heures de rendez-vous'}
+    </Subheading>
     <dl class="hours">
       {
         location.hours[locale].map(([day, time]) => (

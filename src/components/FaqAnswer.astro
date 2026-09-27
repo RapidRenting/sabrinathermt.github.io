@@ -1,0 +1,27 @@
+---
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  text: string;
+}
+
+const { locale, text } = Astro.props;
+const servicesLabel = locale === 'en' ? 'Services & pricing' : 'Services et tarifs';
+const servicesPath = locale === 'en' ? '/services/' : '/fr/services/';
+
+// FAQ answers are plain text edited in the CMS; link the contact details and the
+// pricing page wherever they are mentioned so readers can act on them directly.
+const links: Record<string, string> = {
+  [site.email]: `mailto:${site.email}`,
+  [site.phone]: site.phoneHref,
+  [servicesLabel]: servicesPath,
+};
+const escape = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const pattern = new RegExp(`(${Object.keys(links).map(escape).join('|')})`);
+const parts = text.split(pattern).filter(Boolean);
+---
+
+<p>
+  {parts.map((part) => (links[part] ? <a href={links[part]}>{part}</a> : part))}
+</p>

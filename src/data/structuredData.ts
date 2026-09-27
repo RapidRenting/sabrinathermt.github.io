@@ -58,6 +58,12 @@ function locationBusiness(location: Location, locale: Locale) {
     telephone: '+16138016160',
     address: postalAddress(location),
     hasMap: location.directionsUrl,
+    openingHoursSpecification: location.openingHours.map(({ day, opens, closes }) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: `https://schema.org/${day}`,
+      opens,
+      closes,
+    })),
     parentOrganization: { '@id': businessId },
     employee: { '@id': personId },
   };

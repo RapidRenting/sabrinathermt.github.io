@@ -54,7 +54,16 @@ import { locations } from '../../data/site';
   <section class="section">
     <div class="shell split">
       <div class="split-art">
-        <img src="/assets/sabrinathermt-mark-cream.png" width="800" height="800" alt="" />
+        <img
+          src="/assets/sabrinathermt-mark-cream-480.webp"
+          srcset="/assets/sabrinathermt-mark-cream-480.webp 480w, /assets/sabrinathermt-mark-cream-800.webp 800w"
+          sizes="(max-width: 860px) calc(100vw - 6rem), 360px"
+          width="800"
+          height="800"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div class="split-copy">
         <p class="eyebrow">Une approche réfléchie</p>
