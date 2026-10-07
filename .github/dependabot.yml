@@ -1,0 +1,14 @@
+# Keeps the build and deploy steps in .github/workflows/site.yml current.
+# Website packages (Astro and others) are intentionally not included.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      deploy-actions:
+        patterns:
+          - '*'
+    commit-message:
+      prefix: ci
