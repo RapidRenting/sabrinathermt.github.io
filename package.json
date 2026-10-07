@@ -18,23 +18,24 @@
     "worker:dry-run": "wrangler deploy --dry-run --env production --config worker/wrangler.jsonc"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.3",
-    "astro": "7.3.5"
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.6"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@cloudflare/vitest-pool-workers": "0.22.0",
-    "@cloudflare/workers-types": "5.20260924.1",
+    "@cloudflare/workers-types": "5.20261007.1",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "typescript": "5.9.3",
     "vitest": "4.1.11",
-    "wrangler": "4.138.0"
+    "wrangler": "4.148.0"
   },
   "overrides": {
     "@cloudflare/vitest-pool-workers": {
-      "miniflare": "5.20260921.1-alpha",
-      "wrangler": "4.138.0"
-    }
+      "miniflare": "5.20261006.0-alpha",
+      "wrangler": "4.148.0"
+    },
+    "sharp": "0.35.5"
   }
 }
