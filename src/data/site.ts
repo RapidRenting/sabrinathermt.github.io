@@ -55,7 +55,7 @@ export const locations = [
         title: 'Massothérapeute inscrite au centre-ville d’Ottawa',
         heading: 'Massothérapie sur l’avenue Gladstone',
         description:
-          'Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, MTI, au 481, avenue Gladstone, au centre-ville d’Ottawa.',
+          'Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, RMT, au 481, avenue Gladstone, au centre-ville d’Ottawa.',
         intro:
           'Sabrina reçoit ses clients à l’unité 1 du 481, avenue Gladstone, au centre-ville d’Ottawa. Choisissez le lieu Gladstone si le centre d’Ottawa vous convient, puis consultez Jane pour voir les rendez-vous, les tarifs et les politiques à jour.',
       },
@@ -122,7 +122,7 @@ export const locations = [
         title: 'Massothérapeute inscrite dans le Glebe à Ottawa',
         heading: 'Massothérapie sur l’avenue Fourth',
         description:
-          'Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, MTI, chez The Movement Co. sur l’avenue Fourth, dans le Glebe à Ottawa.',
+          'Prenez rendez-vous en massothérapie individualisée avec Sabrina McMorran, RMT, chez The Movement Co. sur l’avenue Fourth, dans le Glebe à Ottawa.',
         intro:
           'Sabrina reçoit ses clients au deuxième étage de The Movement Co., au 101, avenue Fourth, dans le Glebe. Choisissez le lieu Fourth si le Glebe vous convient, puis consultez Jane pour voir les rendez-vous, les tarifs et les politiques à jour.',
       },
