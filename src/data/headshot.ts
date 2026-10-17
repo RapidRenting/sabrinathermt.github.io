@@ -11,7 +11,7 @@ export type Headshot = {
 export const headshot: Headshot | null = {
   src: '/assets/sabrina-headshot.webp',
   width: 960,
-  height: 1200,
+  height: 960,
   focalPoint: '50% 0%',
   smallerWidths: [480, 720],
 };

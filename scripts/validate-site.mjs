@@ -110,7 +110,7 @@ if (robots.includes('Disallow: /\n') || robots.includes('Disallow: /\r\n')) {
 }
 
 for (const location of ['gladstone-entrance', 'fourth-entrance']) {
-  for (const width of [640, 960, 1400]) {
+  for (const width of [640, 960, 1100, 1400]) {
     for (const extension of ['avif', 'webp']) {
       const path = `assets/locations/${location}-${width}.${extension}`;
       if (!files.has(path)) throw new Error(`Missing responsive location image: ${path}`);
