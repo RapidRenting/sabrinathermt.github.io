@@ -8,21 +8,23 @@ interface Props {
 }
 
 const { locale, location, eager = false } = Astro.props;
+// The AVIF and WebP copies are pre-cropped to the 4:3 region the layout shows
+// (object-position: center 45%), so browsers never download the hidden rows.
 const base = location.image.src.replace(/\.jpg$/, '');
 const srcset = (extension: 'avif' | 'webp') =>
-  [640, 960, 1400].map((width) => `${base}-${width}.${extension} ${width}w`).join(', ');
+  [640, 960, 1100, 1400].map((width) => `${base}-${width}.${extension} ${width}w`).join(', ');
 ---
 
 <picture>
   <source
     type="image/avif"
     srcset={srcset('avif')}
-    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) 48vw, 610px"
+    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) calc(47vw - 15px), 550px"
   />
   <source
     type="image/webp"
     srcset={srcset('webp')}
-    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) 48vw, 610px"
+    sizes="(max-width: 860px) calc(100vw - 1.2rem), (max-width: 1160px) calc(47vw - 15px), 550px"
   />
   <img
     class="location-photo"

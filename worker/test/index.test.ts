@@ -8,7 +8,10 @@ const env = {
   ALLOWED_GITHUB_USERS: 'rapidrenting,sabrina-future',
 };
 
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
 
 describe('CMS OAuth worker', () => {
   it('creates a short-lived secure CSRF cookie and GitHub redirect', async () => {
@@ -23,6 +26,24 @@ describe('CMS OAuth worker', () => {
     expect(response.headers.get('set-cookie')).toContain('__Host-decap_oauth_state=');
     expect(response.headers.get('set-cookie')).toContain('Max-Age=600');
     expect(response.headers.get('set-cookie')).toContain('HttpOnly');
+  });
+
+  it('rejects an authentication request for another site', async () => {
+    const response = await handleRequest(
+      new Request('https://cms-auth.sabrinathermt.com/auth?provider=github&site_id=evil.example'),
+      env,
+    );
+    expect(response.status).toBe(400);
+  });
+
+  it('only accepts GET requests', async () => {
+    for (const path of ['/auth?provider=github', '/callback?provider=github']) {
+      const response = await handleRequest(
+        new Request(`https://cms-auth.sabrinathermt.com${path}`, { method: 'POST' }),
+        env,
+      );
+      expect(response.status).toBe(405);
+    }
   });
 
   it('rejects a callback without matching CSRF state', async () => {
@@ -57,7 +78,11 @@ describe('CMS OAuth worker', () => {
       ),
       env,
     );
-    expect(await response.text()).toContain('authorization:github:success');
+    const html = await response.text();
+    expect(html).toContain('authorization:github:success');
+    // The token must only ever be posted to the production site origin.
+    expect(html).toContain('const targetOrigin="https://sabrinathermt.com"');
+    expect(html).not.toContain(`postMessage(result,'*')`);
     expect(response.headers.get('set-cookie')).toContain('Max-Age=0');
   });
 

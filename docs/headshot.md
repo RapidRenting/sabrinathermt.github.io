@@ -1,8 +1,8 @@
 # Sabrina's headshot
 
 The English and French home and Meet Sabrina pages use the approved, lightly retouched
-IMG_7231 portrait, selected on September 26, 2026. The website asset is a 960 × 1200
-WebP with no EXIF or location metadata. The supplied HEIC originals and review
+IMG_7231 portrait, selected on September 26, 2026. The website asset is a 960 × 960 square
+WebP crop of that portrait (the region the layout displays) with no EXIF or location metadata. The supplied HEIC originals and review
 copies remain outside the published assets.
 
 To replace the portrait:

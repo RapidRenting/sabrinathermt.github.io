@@ -17,7 +17,7 @@ function portraitSrcset(image: NonNullable<typeof headshot>) {
 }
 const srcset = headshot ? portraitSrcset(headshot) : undefined;
 const sizes =
-  variant === 'hero' ? '(max-width: 860px) min(calc(100vw - 1.2rem), 460px), 520px' : '20rem';
+  variant === 'hero' ? '(max-width: 860px) min(calc(100vw - 1.2rem), 460px), 470px' : '20rem';
 ---
 
 {
@@ -32,6 +32,7 @@ const sizes =
         alt={locale === 'fr' ? 'Portrait de Sabrina McMorran' : 'Portrait of Sabrina McMorran'}
         style={`object-position: ${headshot.focalPoint}`}
         loading="eager"
+        fetchpriority="high"
         decoding="async"
       />
     </div>
