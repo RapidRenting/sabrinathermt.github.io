@@ -60,7 +60,8 @@ The 30-minute option is request-only and cannot be booked online; keep that exce
 aligned with the booking FAQ when editing appointment options.
 
 The header uses the existing S mark and the wordmark from the supplied raster logo,
-with the English brand slogan beneath it. Headshot setup for both Meet Sabrina
+with the English brand slogan beneath it. The supplied source artwork that the published
+images were derived from is kept in `docs/brand/`, outside `public/`, so it is not deployed. Headshot setup for both Meet Sabrina
 pages is documented in [docs/headshot.md](docs/headshot.md).
 
 Shared colors live in `src/styles/global.css`: mulberry is the header and primary

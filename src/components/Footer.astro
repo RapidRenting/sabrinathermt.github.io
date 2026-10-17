@@ -20,7 +20,7 @@ const { locale } = Astro.props;
         loading="lazy"
         decoding="async"
       />
-      <p class="footer-name">Sabrina McMorran, {locale === 'en' ? 'RMT' : 'MTI'}</p>
+      <p class="footer-name">Sabrina McMorran, RMT</p>
       <p>
         {
           locale === 'en'
@@ -74,7 +74,11 @@ const { locale } = Astro.props;
         </li>
         <li>
           <a href={site.registerUrl} rel="external"
-            >{locale === 'en' ? 'CMTO Public Register' : 'Registre public de l’OMCM'}</a
+            >{
+              locale === 'en'
+                ? 'CMTO Public Register'
+                : 'Registre public de l’Ordre des massothérapeutes de l’Ontario'
+            }</a
           >
         </li>
       </ul>
