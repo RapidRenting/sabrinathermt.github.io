@@ -89,7 +89,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
   </head>
   <body>
     <Header locale={locale} currentPath={path} alternatePath={alternatePath} />
-    <main id="main">
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <Footer locale={locale} />
