@@ -31,25 +31,18 @@ const privacyText =
 </div>
 
 <script>
-  function initializeMaps() {
-    document.querySelectorAll<HTMLElement>('[data-map-consent]').forEach((container) => {
-      const button = container.querySelector<HTMLButtonElement>('.map-button');
-      if (!button || button.dataset.ready === 'true') return;
-      button.dataset.ready = 'true';
-      button.addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.src = container.dataset.mapUrl ?? '';
-        iframe.title = container.dataset.mapTitle ?? 'Google map';
-        iframe.loading = 'lazy';
-        iframe.referrerPolicy = 'no-referrer-when-downgrade';
-        iframe.allowFullscreen = true;
-        container.replaceChildren(iframe);
-        // Keep keyboard and screen reader users in place once the button is removed.
-        iframe.focus();
-      });
+  document.querySelectorAll<HTMLElement>('[data-map-consent]').forEach((container) => {
+    const button = container.querySelector<HTMLButtonElement>('.map-button');
+    button?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = container.dataset.mapUrl ?? '';
+      iframe.title = container.dataset.mapTitle ?? 'Google map';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.allowFullscreen = true;
+      container.replaceChildren(iframe);
+      // Keep keyboard and screen reader users in place once the button is removed.
+      iframe.focus();
     });
-  }
-
-  initializeMaps();
-  document.addEventListener('astro:page-load', initializeMaps);
+  });
 </script>

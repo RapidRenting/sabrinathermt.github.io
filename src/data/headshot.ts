@@ -1,4 +1,4 @@
-/** Approved portrait used on both Meet Sabrina pages. */
+/** Approved portrait used on the home and Meet Sabrina pages. */
 export type Headshot = {
   src: string;
   width: number;

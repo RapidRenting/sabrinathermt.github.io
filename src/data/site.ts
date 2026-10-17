@@ -21,7 +21,7 @@ export const locations = [
   {
     id: 'gladstone',
     name: { en: 'Gladstone', fr: 'Gladstone' },
-    area: { en: 'Centretown', fr: 'centre-ville d’Ottawa' },
+    area: { en: 'Centretown', fr: 'le centre-ville d’Ottawa' },
     path: {
       en: '/locations/centretown-gladstone/',
       fr: '/fr/lieux/centre-ville-gladstone/',
@@ -68,8 +68,8 @@ export const locations = [
       ],
       fr: [
         ['Dimanche', 'Sur demande seulement'],
-        ['Lundi', '8 h–16 h'],
-        ['Mercredi', '8 h–16 h'],
+        ['Lundi', '8 h–16 h'],
+        ['Mercredi', '8 h–16 h'],
       ],
     },
     // Machine-readable copy of the bookable hours above, for search results.
@@ -134,8 +134,8 @@ export const locations = [
         ['Friday', 'By request only'],
       ],
       fr: [
-        ['Mardi', '8 h–16 h'],
-        ['Jeudi', '12 h–20 h'],
+        ['Mardi', '8 h–16 h'],
+        ['Jeudi', '12 h–20 h'],
         ['Vendredi', 'Sur demande seulement'],
       ],
     },

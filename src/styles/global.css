@@ -318,26 +318,6 @@ h1 {
   font-weight: 740;
 }
 
-.hero-art {
-  position: relative;
-}
-
-.hero-art::before {
-  position: absolute;
-  inset: -1rem 1.2rem 1rem -1.2rem;
-  z-index: -1;
-  border: 1px solid var(--blush);
-  border-radius: 48% 52% 45% 55%;
-  content: '';
-}
-
-.hero-art img {
-  width: min(100%, 520px);
-  margin-inline: auto;
-  border-radius: 48% 52% 45% 55%;
-  box-shadow: var(--shadow);
-}
-
 .section {
   padding: clamp(4rem, 8vw, 7rem) 0;
 }
@@ -678,6 +658,10 @@ address {
   color: var(--cream);
 }
 
+.site-footer :focus-visible {
+  outline-color: var(--cream);
+}
+
 .site-footer h2 {
   color: var(--blush);
   font-family: inherit;
@@ -758,11 +742,6 @@ address {
   .cta-grid,
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-art {
-    max-width: 460px;
-    margin-inline: auto;
   }
 
   .location-card:nth-child(even) .location-copy {

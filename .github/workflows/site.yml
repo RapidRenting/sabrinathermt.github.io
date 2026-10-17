@@ -5,13 +5,17 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    # Rebuilds main once a year so the footer copyright year stays current.
+    - cron: '17 6 2 1 *'
 
 permissions:
   contents: read
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  # Cancel superseded pull request builds, but let a production deploy finish.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:

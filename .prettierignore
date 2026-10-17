@@ -4,4 +4,6 @@ node_modules/
 output/
 public/admin/decap-cms.js
 public/assets/
+# Written by the FAQ editor (Decap CMS) without a final newline; validated by scripts/validate-content.mjs instead.
+src/data/faqs.json
 worker/worker-configuration.d.ts
