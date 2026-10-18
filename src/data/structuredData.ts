@@ -1,5 +1,5 @@
 import faqData from './faqs.json';
-import { locations, site, type Locale } from './site';
+import { contact, locations, site, type Locale } from './site';
 
 type Location = (typeof locations)[number];
 
@@ -29,7 +29,7 @@ function person() {
     jobTitle: 'Registered Massage Therapist',
     url: `${site.origin}/meet-sabrina/`,
     email: site.email,
-    telephone: '+16138016160',
+    telephone: site.phoneE164,
     knowsLanguage: ['en', 'fr'],
     worksFor: { '@id': businessId },
   };
@@ -43,7 +43,14 @@ function organization() {
     url: site.origin,
     logo: absolute(site.logo),
     email: site.email,
-    telephone: '+16138016160',
+    telephone: site.phoneE164,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: site.phoneE164,
+      email: site.email,
+      availableLanguage: ['en', 'fr'],
+    },
     employee: { '@id': personId },
   };
 }
@@ -56,7 +63,7 @@ function locationBusiness(location: Location, locale: Locale) {
     url: absolute(location.path[locale]),
     image: absolute(location.image.src),
     email: site.email,
-    telephone: '+16138016160',
+    telephone: site.phoneE164,
     address: postalAddress(location),
     hasMap: location.directionsUrl,
     openingHoursSpecification: location.openingHours.map(({ day, opens, closes }) => ({
@@ -91,6 +98,27 @@ export function homeStructuredData(locale: Locale) {
           locale === 'en'
             ? 'Registered Massage Therapist in Ottawa'
             : 'Massothérapeute inscrite à Ottawa',
+        inLanguage: locale === 'en' ? 'en-CA' : 'fr-CA',
+        isPartOf: { '@id': `${site.origin}/#website` },
+        about: { '@id': businessId },
+      },
+      organization(),
+      person(),
+      ...locations.map((location) => locationBusiness(location, locale)),
+    ],
+  };
+}
+
+export function contactStructuredData(locale: Locale) {
+  const pageUrl = absolute(contact[locale].path);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ContactPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: locale === 'en' ? 'Contact Sabrina The RMT' : 'Joindre Sabrina The RMT',
         inLanguage: locale === 'en' ? 'en-CA' : 'fr-CA',
         isPartOf: { '@id': `${site.origin}/#website` },
         about: { '@id': businessId },

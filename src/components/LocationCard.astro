@@ -2,7 +2,7 @@
 import BookingCta from './BookingCta.astro';
 import LocationPhoto from './LocationPhoto.astro';
 import MapConsent from './MapConsent.astro';
-import type { Locale, locations } from '../data/site';
+import { contact, site, type Locale, type locations } from '../data/site';
 
 interface Props {
   locale: Locale;
@@ -22,6 +22,7 @@ const {
 const Heading = `h${headingLevel}` as 'h2' | 'h3';
 const Subheading = `h${headingLevel + 1}` as 'h3' | 'h4';
 const address = locale === 'en' ? location.address : location.addressFr;
+const colon = locale === 'en' ? ':' : '\u00a0:';
 ---
 
 <article class="location-card" id={location.id}>
@@ -45,6 +46,16 @@ const address = locale === 'en' ? location.address : location.addressFr;
         ))
       }
     </dl>
+    <p class="location-contact">
+      <span class="location-contact-line"
+        ><strong>{contact[locale].emailPreferred}{colon}</strong>{' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a></span
+      >
+      <span class="location-contact-line"
+        ><strong>{contact[locale].phoneLabel}{colon}</strong>{' '}
+        <a href={site.phoneHref}>{site.phone}</a></span
+      >
+    </p>
     <p class="location-note">{location.notes[locale]}</p>
     <p class="location-note">
       <strong>{locale === 'en' ? 'Access:' : 'Accès\u00a0:'}</strong>{' '}

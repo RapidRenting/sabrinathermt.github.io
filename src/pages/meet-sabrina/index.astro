@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingCta from '../../components/BookingCta.astro';
 import SabrinaIntro from '../../components/SabrinaIntro.astro';
-import { site } from '../../data/site';
+import { contact, site } from '../../data/site';
 ---
 
 <BaseLayout
@@ -57,9 +57,10 @@ import { site } from '../../data/site';
       </p>
 
       <div class="callout">
-        <strong>Questions before booking?</strong>
-        Email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions. Please do not include
-        personal health information in email.
+        <strong>Questions before booking?</strong>{' '}
+        Email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions. For same-day matters,
+        call or text{' '}
+        <a href={site.phoneHref}>{site.phone}</a>. {contact.en.privacy}
       </div>
 
       <div class="cta-actions">

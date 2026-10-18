@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCta from './BookingCta.astro';
+import { contactStructuredData } from '../data/structuredData';
+import { contact, locations, site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const words = contact[locale];
+
+const copy = {
+  en: {
+    title: 'Contact Sabrina',
+    description:
+      'Email, phone and location details for Sabrina McMorran, Registered Massage Therapist in Ottawa. Email is preferred; call or text for same-day matters.',
+    eyebrow: 'Get in touch',
+    heading: 'Contact Sabrina',
+    lede: 'Email is the best way to reach Sabrina with questions. For same-day matters, call or text. To book, cancel or manage an appointment, use Jane.',
+    emailButton: 'Email Sabrina',
+    emailFor:
+      'Best for booking questions, rescheduling, appointment requests, including 30-minute appointments and request-only days, and gift cards in other amounts.',
+    phoneFor: 'For anything that is not same-day, email is the better option.',
+    privacyHeading: 'Privacy',
+    privacyLink: 'Read the privacy notice',
+    bookingEyebrow: 'Booking',
+    bookingHeading: 'Book, cancel or manage an appointment',
+    bookingText:
+      'Jane shows current availability, appointment options, fees and policies for both locations. Use it to book, cancel or manage standard appointments and to enter your health-history information.',
+    faqLink: 'Read frequently asked questions',
+    locationsEyebrow: 'Locations',
+    locationsHeading: 'Where to find Sabrina',
+    hours: 'Bookable hours',
+    directions: 'Get directions',
+    details: 'Location details',
+  },
+  fr: {
+    title: 'Joindre Sabrina',
+    description:
+      'Courriel, téléphone et adresses de Sabrina McMorran, massothérapeute inscrite à Ottawa. Le courriel est à privilégier; appelez ou envoyez un texto pour les questions du jour même.',
+    eyebrow: 'Coordonnées',
+    heading: 'Joindre Sabrina',
+    lede: 'Le courriel est le meilleur moyen de poser vos questions à Sabrina. Pour les questions du jour même, appelez ou envoyez un texto. Pour prendre, annuler ou gérer un rendez-vous, utilisez Jane.',
+    emailButton: 'Écrire à Sabrina',
+    emailFor:
+      'À privilégier pour les questions de réservation, les reports, les demandes de rendez-vous, y compris les rendez-vous de 30 minutes et les journées sur demande, et les cartes-cadeaux d’un autre montant.',
+    phoneFor: 'Pour tout ce qui ne concerne pas le jour même, le courriel est la meilleure option.',
+    privacyHeading: 'Confidentialité',
+    privacyLink: 'Lire l’avis de confidentialité',
+    bookingEyebrow: 'Réservation',
+    bookingHeading: 'Prendre, annuler ou gérer un rendez-vous',
+    bookingText:
+      'Jane présente les disponibilités, les options de rendez-vous, les tarifs et les politiques à jour pour les deux lieux. Utilisez Jane pour prendre, annuler ou gérer les rendez-vous réguliers et transmettre vos antécédents de santé.',
+    faqLink: 'Lire la foire aux questions',
+    locationsEyebrow: 'Lieux',
+    locationsHeading: 'Où trouver Sabrina',
+    hours: 'Heures de rendez-vous',
+    directions: 'Itinéraire',
+    details: 'Renseignements',
+  },
+}[locale];
+
+const privacyPath = locale === 'en' ? '/privacy/' : '/fr/confidentialite/';
+const faqPath = locale === 'en' ? '/faq/' : '/fr/faq/';
+---
+
+<BaseLayout
+  locale={locale}
+  title={copy.title}
+  description={copy.description}
+  path={words.path}
+  structuredData={contactStructuredData(locale)}
+>
+  <header class="page-header">
+    <div class="shell content-narrow">
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.heading}</h1>
+      <p class="page-lede">{copy.lede}</p>
+      <div class="hero-actions">
+        <a class="button" href={`mailto:${site.email}`}>{copy.emailButton}</a>
+        <a class="button button-secondary" href={site.phoneHref}>
+          {`${words.phoneLabel} ${site.phone}`}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-white">
+    <div class="shell content-wide">
+      <div class="contact-methods">
+        <article class="contact-card">
+          <h2 class="contact-card-title">{words.emailPreferred}</h2>
+          <p class="contact-value"><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p>{words.replyTime}</p>
+          <p>{copy.emailFor}</p>
+        </article>
+        <article class="contact-card">
+          <h2 class="contact-card-title">{words.phoneLabel}</h2>
+          <p class="contact-value"><a href={site.phoneHref}>{site.phone}</a></p>
+          <p>{words.phoneUse}</p>
+          <p>{copy.phoneFor}</p>
+        </article>
+      </div>
+      <div class="callout contact-privacy">
+        <strong>{copy.privacyHeading}{locale === 'fr' ? ' :' : ':'}</strong>{' '}
+        {words.privacy}{' '}
+        <a href={privacyPath}>{copy.privacyLink}</a>.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell content-narrow">
+      <p class="eyebrow">{copy.bookingEyebrow}</p>
+      <h2 class="contact-section-heading">{copy.bookingHeading}</h2>
+      <p>{copy.bookingText}</p>
+      <div class="cta-actions">
+        <BookingCta locale={locale} />
+        <a class="button button-secondary" href={faqPath}>{copy.faqLink}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="shell content-wide">
+      <p class="eyebrow">{copy.locationsEyebrow}</p>
+      <h2 class="contact-section-heading">{copy.locationsHeading}</h2>
+      <div class="contact-locations">
+        {
+          locations.map((location) => (
+            <article class="contact-location">
+              <h3>{location.name[locale]}</h3>
+              {'venue' in location && <p class="venue">{location.venue}</p>}
+              <address>{locale === 'en' ? location.address : location.addressFr}</address>
+              <p class="contact-location-subheading">{copy.hours}</p>
+              <dl class="hours">
+                {location.hours[locale].map(([day, time]) => (
+                  <>
+                    <dt>{day}</dt>
+                    <dd>{time}</dd>
+                  </>
+                ))}
+              </dl>
+              <p class="contact-location-links">
+                <a class="text-link" href={location.directionsUrl} rel="external">
+                  {copy.directions}
+                  <span aria-hidden="true"> ↗</span>
+                </a>
+                <a class="text-link" href={location.path[locale]}>
+                  {copy.details}
+                  <span aria-hidden="true"> →</span>
+                </a>
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

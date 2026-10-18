@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BookingCta from '../../../components/BookingCta.astro';
 import SabrinaIntro from '../../../components/SabrinaIntro.astro';
-import { site } from '../../../data/site';
+import { contact, site } from '../../../data/site';
 ---
 
 <BaseLayout
@@ -59,9 +59,10 @@ import { site } from '../../../data/site';
       </p>
 
       <div class="callout">
-        <strong>Des questions avant de réserver?</strong>
-        Écrivez à <a href={`mailto:${site.email}`}>{site.email}</a> pour toute question générale. N’incluez
-        aucun renseignement personnel sur la santé dans votre courriel.
+        <strong>Des questions avant de réserver?</strong>{' '}
+        Écrivez à <a href={`mailto:${site.email}`}>{site.email}</a> pour toute question générale. Pour
+        les questions du jour même, appelez ou envoyez un texto au{' '}
+        <a href={site.phoneHref}>{site.phone}</a>. {contact.fr.privacy}
       </div>
 
       <div class="cta-actions">
