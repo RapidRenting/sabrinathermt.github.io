@@ -1,5 +1,5 @@
 ---
-import { nav, type Locale } from '../data/site';
+import { contact, nav, site, type Locale } from '../data/site';
 
 interface Props {
   locale: Locale;
@@ -15,6 +15,15 @@ const languageCode = locale === 'en' ? 'fr' : 'en';
 
 <a class="skip-link" href="#main">{locale === 'en' ? 'Skip to content' : 'Aller au contenu'}</a>
 <header class="site-header">
+  <div class="header-contact">
+    <div class="shell header-contact-inner">
+      <a class="header-phone" href={site.phoneHref}>
+        <span class="header-contact-label">{contact[locale].phoneLabel}</span>
+        <span class="header-phone-number">{site.phone}</span>
+      </a>
+      <a class="header-email" href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
   <div class="shell header-inner">
     <a class="brand" href={locale === 'en' ? '/' : '/fr/'}>
       <img

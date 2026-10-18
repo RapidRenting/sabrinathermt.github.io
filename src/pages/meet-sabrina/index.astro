@@ -57,9 +57,11 @@ import { site } from '../../data/site';
       </p>
 
       <div class="callout">
-        <strong>Questions before booking?</strong>
-        Email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions. Please do not include
-        personal health information in email.
+        <strong>Questions before booking?</strong>{' '}
+        Email <a href={`mailto:${site.email}`}>{site.email}</a> for general questions. For same-day matters,
+        call or text{' '}
+        <a href={site.phoneHref}>{site.phone}</a>. Please do not include personal health information
+        in email.
       </div>
 
       <div class="cta-actions">

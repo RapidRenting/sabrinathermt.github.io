@@ -6,7 +6,7 @@ import SabrinaPortrait from '../components/SabrinaPortrait.astro';
 import { homeStructuredData } from '../data/structuredData';
 import FeeSummary from '../components/FeeSummary.astro';
 import WeeklySchedule from '../components/WeeklySchedule.astro';
-import { locations, site } from '../data/site';
+import { contact, locations, site } from '../data/site';
 ---
 
 <BaseLayout
@@ -30,6 +30,11 @@ import { locations, site } from '../data/site';
           <BookingCta locale="en" />
           <a class="button button-secondary" href="#locations">Choose a location</a>
         </div>
+        <p class="hero-contact">
+          Questions? Email <a href={`mailto:${site.email}`}>{site.email}</a> or call or text <a
+            href={site.phoneHref}>{site.phone}</a
+          >.
+        </p>
       </div>
       <SabrinaPortrait locale="en" variant="hero" />
     </div>
@@ -92,11 +97,19 @@ import { locations, site } from '../data/site';
       <div>
         <h2>Ready to book?</h2>
         <p>Use Jane to view current appointments at Gladstone and Fourth.</p>
-        <p class="cta-contact">
-          Questions before booking? Email <a href={`mailto:${site.email}`}>{site.email}</a> and allow
-          1 to 2 business days for a reply. If you’re running late, call or text <a
-            href={site.phoneHref}>{site.phone}</a
-          >. Please do not include personal health information.
+        <ul class="cta-contact">
+          <li>
+            <strong>{contact.en.emailPreferred}:</strong>{' '}
+            <a href={`mailto:${site.email}`}>{site.email}</a>. {contact.en.replyTime}
+          </li>
+          <li>
+            <strong>{contact.en.phoneLabel}:</strong>{' '}
+            <a href={site.phoneHref}>{site.phone}</a>. {contact.en.phoneUse}
+          </li>
+        </ul>
+        <p class="cta-privacy">
+          {contact.en.privacy}{' '}
+          <a href={contact.en.path}>All contact details</a>
         </p>
       </div>
       <BookingCta locale="en" />

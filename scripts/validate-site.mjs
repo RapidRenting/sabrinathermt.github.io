@@ -11,6 +11,8 @@ const required = [
   'fr/services/index.html',
   'faq/index.html',
   'fr/faq/index.html',
+  'contact/index.html',
+  'fr/contact/index.html',
   'privacy/index.html',
   'fr/confidentialite/index.html',
   'locations/centretown-gladstone/index.html',

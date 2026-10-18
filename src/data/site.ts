@@ -4,6 +4,8 @@ export const site = {
   email: 'massage@sabrinathermt.com',
   phone: '613-801-6160',
   phoneHref: 'tel:+16138016160',
+  /** E.164 form for structured data. Keep aligned with phone and phoneHref. */
+  phoneE164: '+16138016160',
   origin: 'https://sabrinathermt.com',
   logo: '/assets/sabrinathermt-logo-mulberry.png',
   registerUrl: 'https://cmto.ca.thentiacloud.net/webs/cmto/register/#/',
@@ -16,6 +18,36 @@ export const site = {
 } as const;
 
 export type Locale = 'en' | 'fr';
+
+/**
+ * Shared contact wording. Email is the preferred channel; the phone is for
+ * same-day matters. Keep these aligned with the FAQ and privacy pages.
+ */
+export const contact = {
+  en: {
+    path: '/contact/',
+    navLabel: 'Contact',
+    phoneLabel: 'Call or text',
+    emailLabel: 'Email',
+    emailPreferred: 'Email (preferred)',
+    replyTime: 'Please allow 1 to 2 business days for a reply.',
+    phoneUse: 'For same-day matters, such as running late for an appointment.',
+    privacy:
+      'Please do not include personal health information in email, text messages or voicemail.',
+  },
+  fr: {
+    path: '/fr/contact/',
+    navLabel: 'Nous joindre',
+    phoneLabel: 'Appel ou texto',
+    emailLabel: 'Courriel',
+    emailPreferred: 'Courriel (à privilégier)',
+    replyTime: 'Prévoyez un délai de réponse de 1 à 2 jours ouvrables.',
+    phoneUse:
+      'Pour les questions du jour même, par exemple si vous êtes en retard pour un rendez-vous.',
+    privacy:
+      'N’incluez aucun renseignement personnel sur la santé dans un courriel, un texto ou un message vocal.',
+  },
+} as const;
 
 export const locations = [
   {
@@ -173,6 +205,7 @@ export const nav = {
     { href: '/services/', label: 'Services & pricing' },
     { href: '/meet-sabrina/', label: 'Meet Sabrina' },
     { href: '/faq/', label: 'FAQ' },
+    { href: '/contact/', label: 'Contact' },
   ],
   fr: [
     { href: '/fr/', label: 'Accueil' },
@@ -180,6 +213,7 @@ export const nav = {
     { href: '/fr/services/', label: 'Services et tarifs' },
     { href: '/fr/rencontrez-sabrina/', label: 'Rencontrez Sabrina' },
     { href: '/fr/faq/', label: 'FAQ' },
+    { href: '/fr/contact/', label: 'Nous joindre' },
   ],
 } as const;
 
@@ -188,6 +222,7 @@ export const routePairs: Record<string, string> = {
   '/meet-sabrina/': '/fr/rencontrez-sabrina/',
   '/services/': '/fr/services/',
   '/faq/': '/fr/faq/',
+  '/contact/': '/fr/contact/',
   '/privacy/': '/fr/confidentialite/',
   '/locations/centretown-gladstone/': '/fr/lieux/centre-ville-gladstone/',
   '/locations/glebe-fourth/': '/fr/lieux/glebe-fourth/',
@@ -195,6 +230,7 @@ export const routePairs: Record<string, string> = {
   '/fr/rencontrez-sabrina/': '/meet-sabrina/',
   '/fr/services/': '/services/',
   '/fr/faq/': '/faq/',
+  '/fr/contact/': '/contact/',
   '/fr/confidentialite/': '/privacy/',
   '/fr/lieux/centre-ville-gladstone/': '/locations/centretown-gladstone/',
   '/fr/lieux/glebe-fourth/': '/locations/glebe-fourth/',

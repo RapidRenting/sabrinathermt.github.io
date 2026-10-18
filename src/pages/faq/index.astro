@@ -4,6 +4,7 @@ import BookingCta from '../../components/BookingCta.astro';
 import FaqAnswer from '../../components/FaqAnswer.astro';
 import faqData from '../../data/faqs.json';
 import { faqStructuredData } from '../../data/structuredData';
+import { contact, site } from '../../data/site';
 ---
 
 <BaseLayout
@@ -24,11 +25,28 @@ import { faqStructuredData } from '../../data/structuredData';
     </div>
   </header>
 
+  <section class="section faq-contact">
+    <div class="shell content-narrow">
+      <p class="eyebrow">Need to reach Sabrina?</p>
+      <ul class="contact-summary">
+        <li>
+          <strong>{contact.en.emailPreferred}:</strong>{' '}
+          <a href={`mailto:${site.email}`}>{site.email}</a>. {contact.en.replyTime}
+        </li>
+        <li>
+          <strong>{contact.en.phoneLabel}:</strong>{' '}
+          <a href={site.phoneHref}>{site.phone}</a>. {contact.en.phoneUse}
+        </li>
+      </ul>
+      <p class="small">{contact.en.privacy} <a href="/contact/">All contact details</a></p>
+    </div>
+  </section>
+
   <section class="section section-white">
     <div class="shell content-narrow faq-list">
       {
         faqData.faqs.map((faq) => (
-          <details>
+          <details id={faq.id}>
             <>
               <summary>{faq.en.question}</summary>
               <FaqAnswer locale="en" text={faq.en.answer} />

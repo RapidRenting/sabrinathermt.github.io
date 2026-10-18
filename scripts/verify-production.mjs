@@ -20,6 +20,7 @@ const routePairs = [
   ['/meet-sabrina/', '/fr/rencontrez-sabrina/'],
   ['/services/', '/fr/services/'],
   ['/faq/', '/fr/faq/'],
+  ['/contact/', '/fr/contact/'],
   ['/privacy/', '/fr/confidentialite/'],
   ['/locations/centretown-gladstone/', '/fr/lieux/centre-ville-gladstone/'],
   ['/locations/glebe-fourth/', '/fr/lieux/glebe-fourth/'],

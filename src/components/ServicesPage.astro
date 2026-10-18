@@ -36,6 +36,7 @@ const copy = {
     requestIntro:
       '30-minute appointments are available upon request. Contact Sabrina to request one:',
     privacy: 'Please do not include personal health information in email.',
+    phoneLead: 'Call or text',
     giftHeading: 'Gift cards',
     gift: 'Buy a gift card online through Jane, in amounts that match the appointment fees above. For a different amount, up to $500, email {email} or ask in person. To buy online, you’ll sign in to Jane or create an account.',
     giftButton: 'Buy a gift card',
@@ -69,6 +70,7 @@ const copy = {
       'Les rendez-vous de 30 minutes sont offerts sur demande. Communiquez avec Sabrina pour en demander un :',
     privacy:
       'Veuillez ne pas inclure de renseignements personnels sur votre santé dans votre courriel.',
+    phoneLead: 'Appel ou texto\u00a0:',
     giftHeading: 'Cartes-cadeaux',
     gift: 'Achetez une carte-cadeau en ligne dans Jane, pour un montant correspondant aux tarifs ci-dessus. Pour un autre montant, jusqu’à 500 $, écrivez à {email} ou informez-vous en personne. Pour acheter en ligne, vous devrez vous connecter à Jane ou créer un compte.',
     giftButton: 'Acheter une carte-cadeau',
@@ -134,6 +136,7 @@ const copy = {
         <p>{copy.requestIntro}</p>
         <p class="request-contact">
           <a href={`mailto:${site.email}`}>{site.email}</a>
+          <span>{copy.phoneLead} <a href={site.phoneHref}>{site.phone}</a></span>
         </p>
         <p>{copy.privacy}</p>
       </div>
@@ -202,9 +205,8 @@ const copy = {
   }
 
   .request-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    display: grid;
+    gap: 0.25rem;
   }
 
   .callout h3 {

@@ -1,5 +1,5 @@
 ---
-import { site, type Locale } from '../data/site';
+import { contact, site, type Locale } from '../data/site';
 
 interface Props {
   locale: Locale;
@@ -31,8 +31,14 @@ const { locale } = Astro.props;
     </div>
     <div>
       <h2>{locale === 'en' ? 'Contact' : 'Coordonnées'}</h2>
-      <p><a href={site.phoneHref}>{site.phone}</a></p>
-      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p>
+        {contact[locale].phoneLabel}{locale === 'en' ? ':' : '\u00a0:'}{' '}
+        <a href={site.phoneHref}>{site.phone}</a>
+      </p>
+      <p>
+        {contact[locale].emailPreferred}{locale === 'en' ? ':' : '\u00a0:'}{' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
       <p class="small">
         {
           locale === 'en'
@@ -44,6 +50,7 @@ const { locale } = Astro.props;
     <div>
       <h2>{locale === 'en' ? 'Information' : 'Renseignements'}</h2>
       <ul class="footer-links">
+        <li><a href={contact[locale].path}>{contact[locale].navLabel}</a></li>
         <li>
           <a href={locale === 'en' ? '/services/' : '/fr/services/'}
             >{locale === 'en' ? 'Services & pricing' : 'Services et tarifs'}</a
