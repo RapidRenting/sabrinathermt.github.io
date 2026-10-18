@@ -753,9 +753,18 @@ address {
   margin-bottom: 0;
 }
 
-.contact-value {
-  margin-bottom: 0.8rem;
+.contact-card-title {
+  margin: 0 0 0.6rem;
+  color: var(--slate);
   font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  margin: 0 0 0.8rem;
   font-size: clamp(1.15rem, 2.2vw, 1.4rem);
   font-weight: 800;
 }
@@ -1079,10 +1088,6 @@ address {
 
 /* Folded phones and other very narrow screens. */
 @media (max-width: 20.625em) {
-  .header-email {
-    display: none;
-  }
-
   .header-inner {
     column-gap: 0.5rem;
   }

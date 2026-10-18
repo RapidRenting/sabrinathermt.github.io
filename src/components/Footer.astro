@@ -39,13 +39,7 @@ const { locale } = Astro.props;
         {contact[locale].emailPreferred}{locale === 'en' ? ':' : '\u00a0:'}{' '}
         <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
-      <p class="small">
-        {
-          locale === 'en'
-            ? 'Please do not send personal health information by email or text message, or leave it in voicemail.'
-            : 'N’envoyez aucun renseignement personnel sur la santé par courriel ou par texto, et n’en laissez pas dans un message vocal.'
-        }
-      </p>
+      <p class="small">{contact[locale].privacy}</p>
     </div>
     <div>
       <h2>{locale === 'en' ? 'Information' : 'Renseignements'}</h2>

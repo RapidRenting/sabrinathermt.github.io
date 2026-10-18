@@ -37,7 +37,7 @@ export const contact = {
   },
   fr: {
     path: '/fr/contact/',
-    navLabel: 'Nous joindre',
+    navLabel: 'Joindre Sabrina',
     phoneLabel: 'Appel ou texto',
     emailLabel: 'Courriel',
     emailPreferred: 'Courriel (à privilégier)',
@@ -213,7 +213,7 @@ export const nav = {
     { href: '/fr/services/', label: 'Services et tarifs' },
     { href: '/fr/rencontrez-sabrina/', label: 'Rencontrez Sabrina' },
     { href: '/fr/faq/', label: 'FAQ' },
-    { href: '/fr/contact/', label: 'Nous joindre' },
+    { href: '/fr/contact/', label: 'Joindre Sabrina' },
   ],
 } as const;
 

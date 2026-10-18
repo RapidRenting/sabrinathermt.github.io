@@ -48,12 +48,12 @@ const colon = locale === 'en' ? ':' : '\u00a0:';
     </dl>
     <p class="location-contact">
       <span class="location-contact-line"
-        ><strong>{contact[locale].phoneLabel}{colon}</strong>{' '}
-        <a href={site.phoneHref}>{site.phone}</a></span
-      >
-      <span class="location-contact-line"
         ><strong>{contact[locale].emailPreferred}{colon}</strong>{' '}
         <a href={`mailto:${site.email}`}>{site.email}</a></span
+      >
+      <span class="location-contact-line"
+        ><strong>{contact[locale].phoneLabel}{colon}</strong>{' '}
+        <a href={site.phoneHref}>{site.phone}</a></span
       >
     </p>
     <p class="location-note">{location.notes[locale]}</p>

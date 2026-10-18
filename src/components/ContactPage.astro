@@ -40,7 +40,7 @@ const copy = {
     title: 'Joindre Sabrina',
     description:
       'Courriel, téléphone et adresses de Sabrina McMorran, massothérapeute inscrite à Ottawa. Le courriel est à privilégier; appelez ou envoyez un texto pour les questions du jour même.',
-    eyebrow: 'Nous joindre',
+    eyebrow: 'Coordonnées',
     heading: 'Joindre Sabrina',
     lede: 'Le courriel est le meilleur moyen de poser vos questions à Sabrina. Pour les questions du jour même, appelez ou envoyez un texto. Pour prendre, annuler ou gérer un rendez-vous, utilisez Jane.',
     emailButton: 'Écrire à Sabrina',
@@ -52,7 +52,7 @@ const copy = {
     bookingEyebrow: 'Réservation',
     bookingHeading: 'Prendre, annuler ou gérer un rendez-vous',
     bookingText:
-      'Jane présente les disponibilités, les options de rendez-vous, les tarifs et les politiques à jour pour les deux lieux. Utilisez-le pour prendre, annuler ou gérer les rendez-vous réguliers et transmettre vos antécédents de santé.',
+      'Jane présente les disponibilités, les options de rendez-vous, les tarifs et les politiques à jour pour les deux lieux. Utilisez Jane pour prendre, annuler ou gérer les rendez-vous réguliers et transmettre vos antécédents de santé.',
     faqLink: 'Lire la foire aux questions',
     locationsEyebrow: 'Lieux',
     locationsHeading: 'Où trouver Sabrina',
@@ -91,14 +91,14 @@ const faqPath = locale === 'en' ? '/faq/' : '/fr/faq/';
     <div class="shell content-wide">
       <div class="contact-methods">
         <article class="contact-card">
-          <p class="eyebrow">{words.emailPreferred}</p>
-          <h2 class="contact-value"><a href={`mailto:${site.email}`}>{site.email}</a></h2>
+          <h2 class="contact-card-title">{words.emailPreferred}</h2>
+          <p class="contact-value"><a href={`mailto:${site.email}`}>{site.email}</a></p>
           <p>{words.replyTime}</p>
           <p>{copy.emailFor}</p>
         </article>
         <article class="contact-card">
-          <p class="eyebrow">{words.phoneLabel}</p>
-          <h2 class="contact-value"><a href={site.phoneHref}>{site.phone}</a></h2>
+          <h2 class="contact-card-title">{words.phoneLabel}</h2>
+          <p class="contact-value"><a href={site.phoneHref}>{site.phone}</a></p>
           <p>{words.phoneUse}</p>
           <p>{copy.phoneFor}</p>
         </article>
